@@ -17,58 +17,68 @@ export const offerSection = [
 		title: "Analiza czasu pracy kierowców",
 		content:
 			"Nasi specjaliści dysponują profesjonalnym i specjalistycznym sprzętem oraz niezbędną wiedzą na temat przepisów, aby dokonać precyzyjnej analizy zapisów z analogowych i cyfrowych tachografów. Samodzielna analiza, daje zwykle niepełny obraz o popełnianych wykroczeniach w czasie pracy kierowców. Analizując czas pracy możemy szybko zareagować na najczęściej popełniane wykroczenia i zminimalizować wysokość kar w przyszłości. Nasz specjalista przygotuje pełen zestaw raportów z danego okresu, zawierający przejrzysty czas pracy kierowcy, samochodu, wraz z opisem popełnionych naruszeń i wysokością możliwych kar finansowych. Analiza czasu pracy kierowców umożliwia ich kontrolę pod kątem przestrzegania Rozporządzenia 561/2006 oraz Umowy AETR.",
+		linkPath: "analiza-czasu-pracy-kierowców",
 	},
 	{
 		id: 2,
 		title: "Ewidencja czasu pracy kierowców",
 		content:
 			"Nasza firma precyzyjnie opracowuje pełną ewidencję czasu pracy kierowców w oparciu o zapis na wykresówkach i kartach kierowców wraz z należnym wynagrodzeniem uwzględniającym wypłacany ryczałt. Ewidencja zawiera: godziny planowanej i wykonanej pracy,nadgodziny Godziny pracy nocnej, dyżury Dni wolne",
+		linkPath: "ewidencja-czasu-pracy-kierowcy",
 	},
 	{
 		id: 3,
 		title: "Ciągłość zapisów aktywności kierowców",
 		content:
 			"Podczas wykonywania analizy danych z tarcz oraz karty kierowcy sprawdzamy ciągłość aktywności kierowcy oraz wskażemy Państwu okres, w którym ciągłość ta nie jest zachowana. Wtedy niezbędne będzie posiadanie przez Państwa dokumentów potwierdzających ten stan – o czym poinformujemy.",
+		linkPath: "rozliczenie-czasu-pracy-kierowcow",
 	},
 	{
 		id: 4,
 		title: "Ocena ryzyka wystąpienia naruszeń",
 		content:
 			"Ocena ryzyka wystąpienia naruszeń jest to wskaźnik generowany przez Inspekcję Transportu Drogowego podczas kontroli na drodze i zapisywany w centralnej bazie danych GITD. Wielkość współczynnika ryzyka uzależniona jest od liczby i rodzaju wykroczeń kierowcy. Gdy łączna liczba punktów zbliża się do wartości granicznej, właściciel firmy transportowej w następnym roku może być wytypowany do przeprowadzenia kontroli w siedzibie przedsiębiorcy. Pułap liczby punktów decydujący o kontroli jest wartością zmienną w każdym roku. Analizując dany okres pracy kierowcy, mamy możliwość wskazania Państwu uchybień, szybkiego zareagowania na błędy i uświadomienie kierowcy, że popełnia naruszenia, które mogą negatywnie wpłynąć na funkcjonowanie przedsiębiorstwa.",
+		linkPath: "ocena-ryzyka-wystapienia-naruszen",
 	},
 	{
 		id: 5,
 		title: "Delegacje",
 		content: "Wyliczymy dla Państwa wysokość diety przysługującej kierowcy za jego czas pracy poza siedzibą firmy.",
+		linkPath: "delegacje",
 	},
 	{
 		id: 6,
 		title: "Pobieranie danych z tachografów cyfrowych i kart kierowcy",
 		content:
 			"Wszystkie samochody o DMC >3,5t zarejestrowane od 1 maja 2006 wyposażone zostały w cyfrowe urządzenia rejestrujące. Jest to bardzo wygodne rozwiązanie dla kierowców wykonujących przewozy drogowe. Używając cyfrowych kart kierowcy nie muszą się już martwić o poprawność danych wpisywanych na wykresówkach używanych do rejestrowania aktywności na tradycyjnych tachografach analogowych. Przedsiębiorca ma obowiązek sczytywania karty kierowcy minimum co 28 dni oraz tachografu minimum co 90 dni. Współpracując z nami macie Państwo zagwarantowane terminowe odczyty bezpośrednio w siedzibie firmy lub w dogodnym miejscu dla Państwa.",
+		linkPath: "pobieranie-danych-z-tachografow",
 	},
 	{
 		id: 7,
 		title: "Regulamin pracy kierowców",
 		content:
 			"Tworzymy regulaminy pracy kierowców. Dzięki nim wszystko jest łatwiejsze. W przypadku sytuacji konfliktowej lub niejasnej, prawidłowo napisany regulamin pracy potrafi rozwiać wątpliwości i jasno określić obowiązki każdej ze stron. Pozwala też w dużej mierze zaoszczędzić zarobione pieniądze firmy.",
+		linkPath: "regulamin-pracy-kierowcow",
 	},
 	{
 		id: 8,
 		title: "Szkolenia kierowców",
 		content:
 			"90 % błędów podczas jazdy spowodowanych jest niewiedzą kierowcy. Są to błędy bardzo kłopotliwe i kosztowne, ponieważ popełniane są regularnie. Po tym szkoleniu każdy kierowca dwa razy przemyśli wszystkie swoje decyzje zanim popełni jakiekolwiek naruszenie. Dzięki szczegółowej analizie będziemy w stanie pokazać kierowcy jego pomyłki, uświadamiając go, jak powinien pracować, aby uniknąć kar podczas kontroli. Szkoląc swój zespół kierowców w dużej mierze przyczyniamy się do tego, aby w przyszłości dotkliwe kary nas ominęły. Rutynowe szkolenia są przeprowadzane z wszystkimi kierowcami na bieżąco po przeprowadzonej analizie. Na Państwa życzenie nasz doświadczony doradca przeprowadzi szkolenie z przestrzegania norm czasu pracy, oraz z prawidłowej obsługi tachografów analogowych i tachografów cyfrowych.",
+		linkPath: "szkolenia-dla-kierowcow",
 	},
 	{
 		id: 9,
 		title: "Zarządzanie środkami transportu",
 		content:
 			"Załatwianie męczących formalności, jak również wypełnianie oraz składanie formularzy w odpowiednich urzędach przestanie być problemem. Oferujemy bowiem pomoc również w tym zakresie. Pomożemy Ci w uzyskaniu licencji na prowadzenie firmy transportowej, jak również we wszelkich innych formalnościach. Działając na podstawie ustawy o transporcie drogowym oferujemy nawiązanie współpracy z podmiotami nie posiadającymi certyfikatu kompetencji zawodowych przewoźnika. Podpisanie umowy z naszą firmą, zwalnia podmioty chcące starać się o uzyskanie licencji transportowej z obowiązku posiadania certyfikatu kompetencji zawodowych.",
+		linkPath: "zarzadzanie-srodkami-transportu",
 	},
 	{
 		id: 10,
 		title: "Inne usługi",
 		content:
 			"Pragniemy kompleksowo obsługiwać wszystkie współpracujące z nami firmy i dlatego jesteśmy w stanie dostosować naszą elastyczna ofertę do Państwa wymagań.",
+		linkPath: "wyrownanie-odszkodowan-komunikacyjnych-majatkowych",
 	},
 ];

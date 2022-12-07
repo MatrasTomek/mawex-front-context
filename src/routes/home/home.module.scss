@@ -1,0 +1,161 @@
+@import "../../global-styles/common.scss";
+
+.wrapper {
+    @include wrapper;
+
+    h1 {
+        margin-top: 40px;
+        margin-bottom: 40px;
+        text-align: center;
+        font-weight: 700;
+        color: $greyDarness;
+
+    }
+
+    .infoSection {
+        width: 95%;
+        margin: 40px auto;
+        display: flex;
+        flex-wrap: wrap;
+
+        a {
+            flex-basis: 100%;
+            text-decoration: none;
+            border-radius: $radius;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+
+
+            div {
+                width: 100%;
+                min-height: 100%;
+                background: $black;
+                border-radius: $radius;
+                opacity: 0.85;
+
+
+                h3 {
+                    color: $greyLight;
+                    text-align: center;
+                    opacity: 1;
+                    padding: 20px;
+
+                }
+
+                p {
+                    margin-top: 20px;
+                    color: $greyLight;
+                    text-align: center;
+                    font-size: $sizeXXS;
+                    opacity: 1;
+                    padding: 20px;
+                }
+
+            }
+
+            .buttons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                margin-top: 40px;
+                margin-bottom: 40px;
+
+                button {
+                    @include smallButton;
+                    width: 120px
+                }
+            }
+
+        }
+
+        a:nth-child(1) {
+            background-image: url('../../assets/images/digital-marketing_1280.jpg');
+        }
+
+        a:nth-child(2) {
+            background-image: url('../../assets/images/digital-print.jpg');
+        }
+
+        a:nth-child(3) {
+            background-image: url('../../assets/images/job_640.jpg');
+        }
+    }
+
+    .offerSection {
+        .offerItem {
+            a {
+                text-decoration: none;
+
+                h4 {}
+
+                p {}
+            }
+
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        .infoSection {
+            a {
+                div {
+                    p {
+                        font-size: $sizeXS;
+                    }
+
+                    .buttons {
+                        justify-content: end;
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        .infoSection {
+            justify-content: space-around;
+
+            a {
+                margin-bottom: 40px;
+
+                div {
+                    transition: $transition;
+
+                    &:hover {
+                        opacity: 0.95;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        .infoSection {
+            justify-content: space-around;
+
+            a {
+
+
+                div {
+
+
+                    h3 {
+                        font-size: $sizeL;
+
+                    }
+
+                    p {
+
+                        font-size: $sizeS;
+
+                    }
+
+                }
+
+            }
+        }
+    }
+}

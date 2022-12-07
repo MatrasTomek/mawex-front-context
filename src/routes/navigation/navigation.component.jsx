@@ -11,12 +11,12 @@ const Navigation = () => {
                 <div>
                     <Link to="/">Home</Link>
                     <Link to="/">Oferta</Link>
-                    <Link to="/">Certyfikaty</Link>
+                    {/* <Link to="/">Certyfikaty</Link>
                     <Link to="/">Korzyści</Link>
                     <Link to="/">Prawo</Link>
                     <Link to="/">Blog</Link>
                     <Link to="/">Kontakt</Link>
-                    <Link to="/">Wypożyczalnia</Link>
+                    <Link to="/">Wypożyczalnia</Link> */}
                 </div>
             </div>
             <Outlet />

@@ -3,7 +3,7 @@
 $roboto: 'Roboto mono';
 $radius: 5px;
 $bigRadius: 20px;
-$transition: 3s;
+$transition: 0.3s;
 
 $sizeXXS: 14px;
 $sizeXS: 16px;
@@ -20,8 +20,9 @@ $greyDark: #383e40;
 $greyLight: #f8f8f8;
 $blueNormal: rgb(23, 23, 184);
 
-$xSmall: 480px;
-$small: 640px;
-$medium: 800px;
-$large: 1040px;
-$xLarge: 1280px;
+$breakpoints :(xSmall: 480px,
+    small: 640px,
+    medium: 800px,
+    large: 1040px,
+    xlarge: 1280px,
+)

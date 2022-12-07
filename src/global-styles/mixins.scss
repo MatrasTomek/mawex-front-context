@@ -1,41 +1,31 @@
 @import "./variables.scss";
 
 @mixin wrapper {
-    width: 100%;
+    width: 85%;
     margin: 0 auto;
 }
 
-@mixin inside {
-    width: 90%;
-    margin: 0 auto;
-}
-
-@mixin mainButton {
+@mixin smallButton {
     width: 100px;
     padding: 5px;
-    font-size: $s-fz;
+    font-size: $sizeXXS;
     border: none;
     border-radius: $radius;
-    background-color: lighten($blue, 20%);
-    box-shadow: 4px 5px lighten($blue, 50%);
-    color: $white;
-    transition: 0.3s;
+    background-color: $greyLight;
+    color: $blueNormal;
+    font-weight: 700;
+    transition: $transition;
     cursor: pointer;
 
-    &:hover {
-        background-color: $blue;
-        box-shadow: none;
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        font-size: $sizeXS;
     }
 
-    @media screen and (min-width:map-get($breakpoints, small)) {
-        font-size: $s-fz*1.2;
-        width: 110px;
-    }
-
-    @media screen and (min-width:map-get($breakpoints, x-large)) {
-        font-size: $s-fz*1.3;
-        width: 120px;
-        box-shadow: 5px 6px lighten($blue, 50%);
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        &:hover {
+            background-color: $blueNormal;
+            color: $greyLight;
+        }
     }
 }
 
