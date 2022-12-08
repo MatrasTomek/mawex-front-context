@@ -12,14 +12,19 @@ const Home = () => {
     const [isBox2Open, setIsBox2Open] = useState(false);
     const [isBox3Open, setIsBox3Open] = useState(false);
 
-    const offerSectionItems = offerSection.map((item) => (
-        <div className={ styles.offerItem } key={ item.id }>
-            <Link to={ `${ item.linkPath }` }>
-                <h4>{ item.title }</h4>
-                <p>{ item.content }</p>
-            </Link>
-        </div>
-    ));
+
+
+    const [index, setIndex] = useState(0);
+    const handleIndexChanger = (e) => {
+        if (e.target.id === "home-next") {
+            setIndex(index + 1);
+        } else {
+            setIndex(index - 1);
+        }
+    };
+
+
+    const offerSectionItem = offerSection[index];
 
     const handleOpenBox = (e) => {
         let boxNumber = e.target.id;
@@ -44,7 +49,11 @@ const Home = () => {
             <h1>{ bigTitle }</h1>
             <div className={ styles.infoSection }>
                 <Link to="/">
-                    <div>
+
+                    <div className={ styles.opacity } style={ {
+                        backgroundColor: `${ !isBox1Open ? "transparent" : "#000" }`,
+                        opacity: `${ !isBox1Open ? 1 : 0.8 }`
+                    } }>
                         <h3>{ title1 }</h3>
                         { isBox1Open ? (<p>{ content1 }</p>) : ("") }
                         <div className={ styles.buttons }>
@@ -54,7 +63,10 @@ const Home = () => {
                 </Link>
                 <Link to="/">
 
-                    <div>
+                    <div style={ {
+                        backgroundColor: `${ !isBox2Open ? "transparent" : "#000" }`,
+                        opacity: `${ !isBox2Open ? 1 : 0.8 }`
+                    } }>
                         <h3>{ title2 }</h3>
                         { isBox2Open ? (<p>{ content2 }</p>) : ("") }
                         <div className={ styles.buttons }>
@@ -64,7 +76,11 @@ const Home = () => {
                 </Link>
                 <Link to="/">
 
-                    <div>
+                    <div style={ {
+                        backgroundColor: `${ !isBox3Open ? "transparent" : "#000" }`,
+                        opacity: `${ !isBox3Open ? 1 : 0.8 }`
+
+                    } }>
 
                         <h3>{ title3 }</h3>
                         { isBox3Open ? (<p>{ content3 }</p>) : ("") }
@@ -76,7 +92,23 @@ const Home = () => {
             </div>
             <div className={ styles.offerSection }>
                 <h3>Nasza oferta</h3>
-                { offerSectionItems }
+                <div className={ styles.carusel }>
+                    <div className={ styles.imageOffer }>
+                        <h4 >{ offerSectionItem.title }</h4>
+                    </div>
+                    <div className={ styles.offerItem } key={ offerSectionItem.id }>
+                        <div className={ styles.buttons }>
+                            { index <= 0 ? (<p></p>) : (<Button name="poprzedni" type="button" id="home-prev" onClick={ handleIndexChanger } />) }
+                            { index >= 9 ? (<p></p>) : (<Button name="następny" type="button" id="home-next" onClick={ handleIndexChanger } />) }
+                        </div>
+                        <Link >
+                            <p  >{ offerSectionItem.content }</p>
+                            <p>zobacz { ">>>" }</p>
+                        </Link>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     );
