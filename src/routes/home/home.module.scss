@@ -5,7 +5,7 @@
 
 
     h1 {
-        margin-top: 40px;
+        margin-top: 20px;
         margin-bottom: 40px;
         text-align: center;
         font-weight: 700;
@@ -177,6 +177,8 @@
 
     }
 
+
+
     @media screen and (min-width:map-get($breakpoints, medium)) {
         .infoSection {
             a {
@@ -238,6 +240,8 @@
     }
 
     @media screen and (min-width:map-get($breakpoints, large)) {
+
+
         .infoSection {
             justify-content: space-around;
 

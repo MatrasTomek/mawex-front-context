@@ -34,6 +34,7 @@
     height: 35vh;
     overflow: hidden;
 
+
     .image {
         position: absolute;
         top: 0;
@@ -106,6 +107,9 @@
     //         cursor: pointer;
     //     }
     // }
+    @media screen and (orientation: landscape) {
+        height: 45vh;
+    }
 
     @media screen and (min-width:map-get($breakpoints, medium)) {
         .image {
@@ -134,8 +138,12 @@
     }
 
     @media screen and (min-width:map-get($breakpoints, large)) {
+        height: 35vh;
+
         .image {
             .content {
+
+
                 p {
                     font-size: $sizeXXXL*2;
                 }

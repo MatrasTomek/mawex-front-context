@@ -62,7 +62,7 @@ const BannerSlider = () => {
 		// slider[picIndex === BANNER_SLIDER.length ? 0 : picIndex].props.style.opacity = "0";
 		slider[picIndex].props.children.props.style.opacity = "1";
 		// slider[picIndex === BANNER_SLIDER.length ? 0 : picIndex].props.children.props.style.opacity = "1";
-		slider[picIndex].props.children.props.style.top = "40%";
+		slider[picIndex].props.children.props.style.top = "30%";
 		// slider[picIndex === BANNER_SLIDER.length ? 0 : picIndex].props.children.props.style.top = "40%";
 	};
 	slideShow();
