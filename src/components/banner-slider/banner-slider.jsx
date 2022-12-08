@@ -1,33 +1,32 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-import styles from "./bannerSlider.module.scss";
+import styles from "./banner-slider.module.scss";
 
 const BannerSlider = () => {
 	const BANNER_SLIDER = [
 		{
 			id: 0,
-			content: "Odkrywamy talenty dzieci",
-			imgPathSmall: "images/banner/drawing-428383_640.jpg",
-			imgPathBig: "images/banner/drawing-428383_1920.jpg",
+			content: "Ewidencja czasu pracy kierowców",
+			imgPathSmall: "images/banner/digital-print-1198858_640.jpg",
+			imgPathBig: "images/banner/digital-print-1198858_1280.jpg",
+			urlPath: "/",
 		},
 		{
 			id: 1,
-			content: "Uczymy się przez zabawę",
-			imgPathSmall: "images/banner/soap-bubble-2403673_640.jpg",
-			imgPathBig: "images/banner/soap-bubble-2403673_1920.jpg",
+			content: "Prawo, szkolenia, zarządzanie",
+			imgPathSmall: "images/banner/regulation-3246979_640.jpg",
+			imgPathBig: "images/banner/regulation-3246979_1280.jpg",
+			urlPath: "/",
 		},
 		{
 			id: 2,
-			content: "Codziennie bawimy się na świeżym powietrzu",
-			imgPathSmall: "images/banner/playground-2560993_640.jpg",
-			imgPathBig: "images/banner/playground-2560993_1920.jpg",
+			content: "Wypożyczalnia",
+			imgPathSmall: "images/banner/car-1376083_640.jpg",
+			imgPathBig: "images/banner/car-1376083_1280.jpg",
+			urlPath: "/",
 		},
-		{
-			id: 3,
-			content: "Smacznie jemy z własnej kuchni",
-			imgPathSmall: "images/banner/girl-846357_640.jpg",
-			imgPathBig: "images/banner/girl-846357_1920.jpg",
-		},
+
 	];
 	const [picIndex, setPicIndex] = useState(0);
 
@@ -50,10 +49,11 @@ const BannerSlider = () => {
 	});
 
 	const slider = BANNER_SLIDER.map((item) => (
-		<div key={item.id} className={styles.image} style={{ backgroundImage: `url(${item.imgPathBig})`, left: "0%" }}>
-			<div className={styles.content} style={{}}>
-				<p>{item.content} </p>
+		<div key={ item.id } className={ styles.image } style={ { backgroundImage: `url(${ item.imgPathBig })`, left: "0%" } }>
+			<div className={ styles.content } style={ {} }>
+				<p>{ item.content } </p>
 			</div>
+
 		</div>
 	)).reverse();
 
@@ -72,8 +72,10 @@ const BannerSlider = () => {
 	};
 
 	const dots = BANNER_SLIDER.map((item) => (
-		<div key={item.id} id={item.id} className={styles.dot} style={{}} onClick={handleChangeSlide}></div>
+		<div key={ item.id } id={ item.id } className={ styles.dot } style={ {} } onClick={ handleChangeSlide }></div>
 	));
+
+
 
 	const activeDot = () => {
 		dots[picIndex].props.style.backgroundColor = "rgb(180, 180, 180)";
@@ -82,9 +84,12 @@ const BannerSlider = () => {
 	activeDot();
 
 	return (
-		<div className={styles.wrapper}>
-			{slider}
-			<div className={styles.dots}>{dots}</div>
+		<div className={ styles.wrapper }>
+			{ slider }
+			<div className={ styles.links }>
+				<Link to={ `${ BANNER_SLIDER.reverse()[picIndex].urlPath }` }>Zobacz</Link>
+			</div>
+			{/* <div className={ styles.dots }>{ dots }</div> */ }
 		</div>
 	);
 };
