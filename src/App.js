@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { Navigation, Home } from "./routes";
+import { Footer } from "./components";
 
 const App = () => {
 	return (
@@ -12,6 +13,7 @@ const App = () => {
 					<Route path="checkout" element={<Checkout />} /> */}
 				</Route>
 			</Routes>
+			<Footer />
 		</>
 	);
 };
