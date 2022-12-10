@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { BannerSlider, Button } from "../../components";
-
+import { BannerSlider, Button, PostItem } from "../../components";
 import { firstSection, offerSection } from "../../content/homepage-content";
+import { BlogItemsContext } from "../../contexts/blog-items.context";
 import styles from "./home.module.scss";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     const [isBox2Open, setIsBox2Open] = useState(false);
     const [isBox3Open, setIsBox3Open] = useState(false);
 
-
+    const posts = useContext(BlogItemsContext);
 
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {
@@ -44,6 +44,17 @@ const Home = () => {
         };
 
     };
+
+    console.log(posts);
+
+    const postsItems = !posts.data ? (
+        <div>
+            <h4>Status: { posts.status }</h4>
+            <h4>{ posts.message }</h4>
+        </div>
+    ) : (
+        posts.data.map((item) => (<PostItem key={ item._id } postItem={ item } />)).reverse()
+    );
 
     return (
         <>
@@ -111,8 +122,12 @@ const Home = () => {
                             </Link>
                         </div>
                     </div>
-
-
+                    <div className={ styles.postsSection }>
+                        <h3>Najnowsze wiadomości</h3>
+                        <div className={ styles.postItems }>
+                            { postsItems }
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

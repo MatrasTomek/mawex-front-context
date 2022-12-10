@@ -1,1 +1,1 @@
-export { default } from "./banner-slider";
+export { default } from "./banner-slider.component";

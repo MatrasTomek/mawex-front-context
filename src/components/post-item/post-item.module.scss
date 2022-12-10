@@ -1,0 +1,55 @@
+@import "../../global-styles/common.scss";
+
+.postWrapper {
+    width: 100%;
+    margin-bottom: 30px;
+
+    .inside {
+        width: 95%;
+        margin: 0 auto;
+        border: 1px solid $blueNormal;
+        border-radius: $radius;
+
+        img {
+            width: 100%;
+            height: 150px;
+            border-radius: $radius;
+        }
+
+        .contents {
+            padding: 15px;
+
+            h4 {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            p {
+                font-size: $sizeXXS;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            a {
+                color: $blueNormal;
+                font-size: $sizeXXS;
+                font-weight: 700;
+
+            }
+        }
+
+        .signature {
+            padding: 15px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            p {
+                font-size: $sizeXXS;
+                font-weight: 700;
+            }
+        }
+    }
+
+}
