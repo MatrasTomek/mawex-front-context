@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { BannerSlider, Button, PostItem } from "../../components";
+import { BannerSlider, Button, PostItem, MinPostItem } from "../../components";
 import { firstSection, offerSection } from "../../content/homepage-content";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
 import styles from "./home.module.scss";
@@ -14,6 +14,7 @@ const Home = () => {
     const [isBox3Open, setIsBox3Open] = useState(false);
 
     const posts = useContext(BlogItemsContext);
+
 
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {
@@ -45,15 +46,22 @@ const Home = () => {
 
     };
 
-    console.log(posts);
+    const firstThreePosts = !posts.data ? ("") : (posts.data.slice(-3).reverse());
+    const anotherThreePosts = !posts.data ? ("") : (posts.data.slice(-6, -3).reverse());
 
-    const postsItems = !posts.data ? (
+
+
+    const firstThreePostsViev = !posts.data ? (
         <div>
             <h4>Status: { posts.status }</h4>
             <h4>{ posts.message }</h4>
         </div>
     ) : (
-        posts.data.map((item) => (<PostItem key={ item._id } postItem={ item } />)).reverse()
+        firstThreePosts.map((item) => (<PostItem key={ item._id } postItem={ item } homePage={ true } />))
+    );
+
+    const anotherThreePostsViev = !posts.data ? ("") : (
+        anotherThreePosts.map((item) => (<MinPostItem key={ item._id } postItem={ item } />))
     );
 
     return (
@@ -125,7 +133,10 @@ const Home = () => {
                     <div className={ styles.postsSection }>
                         <h3>Najnowsze wiadomości</h3>
                         <div className={ styles.postItems }>
-                            { postsItems }
+                            { firstThreePostsViev }
+                        </div>
+                        <div className={ styles.minPostItems }>
+                            { anotherThreePostsViev }
                         </div>
                     </div>
                 </div>

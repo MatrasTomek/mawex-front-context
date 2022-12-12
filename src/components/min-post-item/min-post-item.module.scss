@@ -1,0 +1,63 @@
+@import "../../global-styles/common.scss";
+
+.minPostWrapper {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+
+
+    .inside {
+        width: 95%;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        border: 1px solid $blueNormal;
+        border-radius: $radius;
+        padding: 10px;
+        color: $greyDarness;
+        transition: $transition;
+        border-radius: $radius;
+
+        &:hover {
+            background-color: $greyDark;
+            color: $greyLight;
+        }
+
+        h4 {
+            flex-basis: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        p {
+            flex-basis: 45%;
+        }
+
+        p:nth-last-child(1) {
+            flex-basis: 100%;
+            text-align: right;
+        }
+    }
+
+    @media screen and (orientation: landscape) {
+        width: 75%;
+
+    }
+
+    @media screen and (min-width:map-get($breakpoints, small)) {
+        width: 75%;
+
+    }
+
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        width: 48%;
+
+    }
+
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        width: 33%;
+    }
+}

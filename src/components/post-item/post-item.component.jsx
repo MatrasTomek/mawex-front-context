@@ -1,8 +1,18 @@
+
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { Button } from "../../components";
 import styles from "./post-item.module.scss";
 
-const PostItem = ({ postItem }) => {
+const PostItem = ({ postItem, homePage }) => {
 
     const { title, content1, content2, date, imgPath, link, userName } = postItem;
+
+    const [isTextShow, setIsTextShow] = useState(false);
+
+    const handleShowMoreText = () => {
+        setIsTextShow(!isTextShow);
+    };
 
     return (
         <div className={ styles.postWrapper }>
@@ -10,7 +20,18 @@ const PostItem = ({ postItem }) => {
                 <img src={ `${ imgPath }` } alt={ `${ imgPath }` } />
                 <div className={ styles.contents }>
                     <h4>{ title }</h4>
-                    <p>{ content1 }</p>
+
+                    { !isTextShow ? (
+                        <p>{ content1.substring(0, 120) } . . .</p>
+                    ) : (
+                        <p>{ content1 }</p>
+                    ) }
+
+                    { homePage ? (
+                        <Link to="/">czytaj dalej</Link>
+                    ) : (
+                        <Button type="button" name={ !isTextShow ? "więcej" : "mniej" } onClick={ handleShowMoreText } />
+                    ) }
                     <p>{ content2 }</p>
                     { link === "" || link === null ? "" : (<a href={ `${ link }` }>Link do artykułu</a>) }
                 </div>

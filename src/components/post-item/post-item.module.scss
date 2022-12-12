@@ -31,9 +31,11 @@
             }
 
             a {
+                display: block;
                 color: $blueNormal;
                 font-size: $sizeXXS;
                 font-weight: 700;
+                text-align: right;
 
             }
         }
@@ -52,4 +54,61 @@
         }
     }
 
+    @media screen and (orientation: landscape) {
+        width: 75%;
+
+    }
+
+    @media screen and (min-width:map-get($breakpoints, small)) {
+        width: 75%;
+
+        .inside {
+            img {
+
+                height: 200px;
+
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        width: 48%;
+
+        .inside {
+            height: 470px;
+
+            img {
+
+                height: 150px;
+            }
+
+            .contents {
+
+                p {
+                    font-size: $sizeXS;
+
+                }
+
+                a {
+                    color: $blueNormal;
+                    font-size: $sizeXS;
+                    font-weight: 700;
+
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        width: 33%;
+
+        .inside {
+
+            height: 480px;
+
+            img {
+                height: 180px;
+            }
+        }
+    }
 }
