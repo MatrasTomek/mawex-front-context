@@ -32,7 +32,7 @@ const Navigation = () => {
                 </div>
                 <div className={ !isMenuOpen ? styles.navLinksClose : styles.navLinksOpen }>
                     <Link to="/">Home</Link>
-                    <Link to="/">Oferta</Link>
+                    <Link to="/offer">Oferta</Link>
                     <Link to="/">Certyfikaty</Link>
                     <Link to="/">Korzyści</Link>
                     <Link to="/">Prawo</Link>
