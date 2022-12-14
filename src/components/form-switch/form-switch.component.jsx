@@ -1,17 +1,26 @@
+import { useState } from 'react';
 import { Form, Field } from 'react-final-form';
 import { Button } from "../../components";
 import { OFFERS_NAMES } from "../../content/offer-content";
 import { sendQuoteMail, sendInfoMail } from "../../utils/mails.utils";
 import styles from "./form-switch.module.scss";
 
+
+const required = value => (value ? undefined : 'Wymagane');
+
 const FormSwitch = ({ isContactForm }) => {
 
-    const onSubmit = async values => {
-        if (isContactForm) {
-            await sendInfoMail(values);
+    const [mailResInfo, setMeilResInfo] = useState(null);
 
+
+    const onSubmit = async values => {
+
+        if (isContactForm) {
+            const mailRes = await sendInfoMail(values);
+            setMeilResInfo(mailRes);
         } else {
-            await sendQuoteMail(values);
+            const mailRes = await sendQuoteMail(values);
+            setMeilResInfo(mailRes);
         }
     };
 
@@ -32,38 +41,64 @@ const FormSwitch = ({ isContactForm }) => {
                 <Form
                     onSubmit={ onSubmit }
                     render={ ({ handleSubmit, form, submitting, pristine, values }) => (
-                        <form onSubmit={ handleSubmit }>
+                        <form
+                            onSubmit={ (event) => {
+                                const promise = handleSubmit(event);
+                                promise &&
+                                    promise.then(() => {
+                                        form.reset();
+                                    });
+                                return promise;
+                            } }
+                        >
                             <div className={ styles.formOffer }>
                                 { fieldsViev }
+
                             </div>
                             <div className={ styles.formContact }>
-                                <div>
-                                    <label>Imię</label>
-                                    <Field
-                                        name="name"
-                                        component="input"
-                                        type="text"
-                                        placeholder="Imię"
-                                    />
-                                </div>
-                                <div>
-                                    <label>Adres eMail</label>
-                                    <Field
-                                        name="mail"
-                                        component="input"
-                                        type="email"
-                                        placeholder="adres eMail"
-                                    />
-                                </div>
-                                <div>
-                                    <label>Telefon</label>
-                                    <Field
-                                        name="phone"
-                                        component="input"
-                                        type="number"
-                                        placeholder="telefon"
-                                    />
-                                </div>
+
+                                <Field
+                                    name="name"
+                                    validate={ required }
+                                >
+                                    { ({ input, meta }) => (
+                                        <div>
+                                            <label>Imię</label>
+                                            <input { ...input } type="text" placeholder="imię" />
+                                            { meta.error && meta.touched && <span>{ meta.error }</span> }
+                                        </div>
+                                    ) }
+
+                                </Field>
+                                <Field
+                                    name="mail"
+                                    validate={ required }
+                                >
+                                    { ({ input, meta }) => (
+                                        <div>
+                                            <label>adres eMail</label>
+                                            <input { ...input } type="email" placeholder="eMail" />
+                                            { meta.error && meta.touched && <span>{ meta.error }</span> }
+                                        </div>
+                                    ) }
+
+                                </Field>
+                                <Field
+                                    name="phone"
+                                    validate={ required }
+
+                                >
+                                    { ({ input, meta }) => (
+                                        <div>
+                                            <label>telefon</label>
+                                            <input { ...input } type="tel" placeholder="123 456 789" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" />
+                                            { meta.error && meta.touched && <span>{ meta.error }</span> }
+                                        </div>
+                                    ) }
+
+                                </Field>
+
+
                                 { isContactForm ? (
                                     <div>
                                         <label>Twoja informacja</label>
@@ -78,6 +113,9 @@ const FormSwitch = ({ isContactForm }) => {
                             </div>
                             <div className={ styles.buttons }>
                                 <Button type="submit" name="wyślij" />
+                            </div>
+                            <div className={ styles.formResponse }>
+                                <p>{ mailResInfo }</p>
                             </div>
                         </form>) }
                 />

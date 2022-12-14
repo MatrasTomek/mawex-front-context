@@ -32,23 +32,29 @@
 @mixin standardButton {
     width: 80px;
     padding: 5px;
-    font-size: $s-fz;
+    font-size: $sizeXXS;
     border: none;
     border-radius: $radius;
-    background-color: darken($blue, 10%);
-    color: $white;
+    background-color: darken($blueNormal, 10%);
+    color: $greyLight;
     cursor: pointer;
     transition: 0.3s;
 
-    &:hover {
-        background-color: lighten($blue, 10%);
-
-    }
-
     @media screen and (min-width:map-get($breakpoints, small)) {
-        font-size: $s-fz*1.1;
+        font-size: $sizeXXS*1.1;
 
     }
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        font-size: $sizeXXS*1.2;
+
+        &:hover {
+            background-color: lighten($blueNormal, 10%);
+
+        }
+    }
+
+
 
 }
 
