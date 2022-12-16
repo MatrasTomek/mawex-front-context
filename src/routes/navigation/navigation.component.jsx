@@ -31,14 +31,14 @@ const Navigation = () => {
 
                 </div>
                 <div className={ !isMenuOpen ? styles.navLinksClose : styles.navLinksOpen }>
-                    <Link to="/">Home</Link>
-                    <Link to="/offer">Oferta</Link>
-                    <Link to="/">Certyfikaty</Link>
-                    <Link to="/">Korzyści</Link>
-                    <Link to="/">Prawo</Link>
-                    <Link to="/">Blog</Link>
-                    <Link to="/">Kontakt</Link>
-                    <Link to="/">Wypożyczalnia</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Home</Link>
+                    <Link to="/offer" onClick={ handleOpenCloseMenu }>Oferta</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Certyfikaty</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Korzyści</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Prawo</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Blog</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Kontakt</Link>
+                    <Link to="/" onClick={ handleOpenCloseMenu }>Wypożyczalnia</Link>
                 </div>
             </div>
             <Outlet />
