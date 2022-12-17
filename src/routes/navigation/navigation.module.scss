@@ -94,10 +94,12 @@
             flex-wrap: wrap;
             justify-content: space-around;
             height: 130px;
+            position: relative;
 
             a {
                 font-size: $sizeS;
             }
+
         }
     }
 

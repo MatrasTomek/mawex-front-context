@@ -1,0 +1,26 @@
+@import "../../global-styles/common.scss";
+
+.wrapperDrop {
+    display: none;
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        position: absolute;
+        top: 60px;
+        width: 500px;
+
+        background-color: $greyLight;
+        padding: 20px;
+        border-radius: $radius;
+
+        .inside {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            a {
+                font-size: $sizeXS;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
