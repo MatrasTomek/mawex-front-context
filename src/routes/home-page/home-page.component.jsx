@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { BannerSlider, Button, PostItem, MinPostItem } from "../../components";
 import { firstSection, offerSection } from "../../content/homepage-content";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
-import styles from "./home.module.scss";
+import styles from "./home-page.module.scss";
 
 const Home = () => {
 

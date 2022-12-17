@@ -34,7 +34,7 @@ const Navigation = () => {
                     <Link to="/" onClick={ handleOpenCloseMenu }>Home</Link>
                     <Link to="/offer" onClick={ handleOpenCloseMenu }>Oferta</Link>
                     {/* <DropDownMenu /> */ }
-                    <Link to="/" onClick={ handleOpenCloseMenu }>Certyfikaty</Link>
+                    <Link to="/certificates" onClick={ handleOpenCloseMenu }>Certyfikaty</Link>
                     <Link to="/" onClick={ handleOpenCloseMenu }>Korzyści</Link>
                     <Link to="/" onClick={ handleOpenCloseMenu }>Prawo</Link>
                     <Link to="/" onClick={ handleOpenCloseMenu }>Blog</Link>

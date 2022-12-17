@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Navigation, Home, Offer, SubRoutes } from "./routes";
+import { Navigation, Home, Offer, SubRoutes, CertPage } from "./routes";
 import { Footer } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
 
@@ -15,9 +15,7 @@ const App = () => {
 					<Route index element={<Home />} />
 					<Route path="/offer" element={<Offer />} />
 					{offerSubRoutes}
-					{/* <Route path="shop/*" element={<Shop />} />
-					<Route path="auth" element={<Authentication />} />
-					<Route path="checkout" element={<Checkout />} /> */}
+					<Route path="/certificates" element={<CertPage />} />
 				</Route>
 			</Routes>
 			<Footer />
