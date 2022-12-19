@@ -9,6 +9,7 @@
 # testing
 /coverage
 /public/images
+/public/documents
 # production
 /build
 

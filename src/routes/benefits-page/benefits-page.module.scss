@@ -25,11 +25,16 @@
 
         .content1,
         .content2 {
+            border: 1px solid $greyDarness;
+            border-radius: $radius;
+            padding: 15px;
             margin-bottom: 30px;
+            background-color: $greyDarness;
 
             h3 {
                 color: $blueNormal;
                 margin-bottom: 10px;
+                color: $greyLight;
             }
 
             ul {
@@ -38,9 +43,15 @@
                 li {
                     font-size: $sizeXXS;
                     margin-left: 20px;
+                    color: $greyLight;
 
                 }
             }
+        }
+
+        .content2 {
+            border-color: $greyDark;
+            background-color: $greyDark;
         }
 
 
@@ -60,10 +71,14 @@
 
     @media screen and (min-width:map-get($breakpoints, medium)) {
         .infoConetnt {
-
+            display: flex;
+            justify-content: space-between;
+            margin: 40px auto;
 
             .content1,
             .content2 {
+                padding: 30px;
+                flex-basis: 48%;
 
                 ul {
 

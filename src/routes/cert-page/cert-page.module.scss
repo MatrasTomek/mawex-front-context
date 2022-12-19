@@ -42,7 +42,7 @@
         }
     }
 
-    @media screen and (min-width:map-get($breakpoints, medium)) {
+    @media screen and (min-width:map-get($breakpoints, large)) {
         .banner {
             background-image: url("../../assets/images/cert-page/library-922998_1920.jpg");
         }
