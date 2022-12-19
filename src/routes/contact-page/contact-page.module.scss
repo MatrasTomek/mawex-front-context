@@ -1,0 +1,146 @@
+@import "../../global-styles/common.scss";
+
+.wrapper {
+    width: 100%;
+    min-height: 40vh;
+
+    .banner {
+        width: 100%;
+        height: 30vh;
+        background-image: url("../../assets/images/contact-page/letter-2794672_640.jpg");
+        background-size: cover;
+        background-position: center;
+
+        h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: $greyLight;
+            text-transform: uppercase;
+        }
+    }
+
+    .infoConetnt {
+        width: 90%;
+        margin: 20px auto;
+
+        .content1 {
+            border: 1px solid $greyDarness;
+            border-radius: $radius;
+            padding: 15px;
+            margin-bottom: 30px;
+            border-color: $greyDark;
+            background-color: $greyDark;
+
+            h3 {
+                color: $blueNormal;
+                margin-bottom: 10px;
+                color: $greyLight;
+            }
+
+
+
+            p,
+            a {
+                font-size: $sizeXXS;
+                margin-left: 20px;
+                color: $greyLight;
+            }
+
+            p {
+                span {
+                    font-weight: 700;
+                }
+
+            }
+
+            p:nth-child(4) {
+                margin-bottom: 20px;
+            }
+
+            a {
+                display: block;
+                margin-bottom: 20px;
+                color: white;
+            }
+
+        }
+
+
+        .maps {
+            margin-top: 40px;
+            border-radius: $radius;
+        }
+
+
+    }
+
+    @media screen and (orientation: landscape) {
+        .banner {
+            height: auto;
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, small)) {
+        .banner {
+            height: 30vh;
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        .infoConetnt {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 40px auto;
+
+
+            .content1 {
+                padding: 30px;
+                flex-basis: 40%;
+
+                ul {
+
+                    li {
+                        font-size: $sizeXS;
+
+                    }
+                }
+            }
+
+            .contactForm {
+                flex-basis: 60%;
+
+            }
+
+            .maps {
+                flex-basis: 100%;
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        .banner {
+            background-image: url("../../assets/images/contact-page/letter-2794672_1920.jpg");
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        .infoConetnt {
+
+            .content1 {
+
+                ul {
+
+                    li {
+                        font-size: $sizeS;
+
+                    }
+                }
+            }
+
+            .maps {
+                flex-basis: 80%;
+            }
+        }
+    }
+}

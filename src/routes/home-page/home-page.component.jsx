@@ -124,7 +124,7 @@ const Home = () => {
                                 { index <= 0 ? (<p></p>) : (<Button name="poprzedni" type="button" id="home-prev" onClick={ handleIndexChanger } />) }
                                 { index >= 9 ? (<p></p>) : (<Button name="następny" type="button" id="home-next" onClick={ handleIndexChanger } />) }
                             </div>
-                            <Link >
+                            <Link to={ `${ offerSectionItem.linkPath }` }>
                                 <p  >{ offerSectionItem.content }</p>
                                 <p>zobacz { ">>>" }</p>
                             </Link>
