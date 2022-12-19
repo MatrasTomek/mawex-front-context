@@ -10,14 +10,14 @@ const BannerSlider = () => {
 			content: "Ewidencja czasu pracy kierowców",
 			imgPathSmall: "images/banner/digital-print-1198858_640.jpg",
 			imgPathBig: "images/banner/digital-print-1198858_1280.jpg",
-			urlPath: "/",
+			urlPath: "ewidencja-czasu-pracy-kierowcy",
 		},
 		{
 			id: 1,
 			content: "Prawo, szkolenia, zarządzanie",
 			imgPathSmall: "images/banner/regulation-3246979_640.jpg",
 			imgPathBig: "images/banner/regulation-3246979_1280.jpg",
-			urlPath: "/",
+			urlPath: "/szkolenia-dla-kierowcow",
 		},
 		{
 			id: 2,
@@ -55,7 +55,7 @@ const BannerSlider = () => {
 			</div>
 
 		</div>
-	)).reverse();
+	));
 
 	const slideShow = () => {
 		slider[picIndex].props.style.opacity = "1";
@@ -87,7 +87,7 @@ const BannerSlider = () => {
 		<div className={ styles.wrapper }>
 			{ slider }
 			<div className={ styles.links }>
-				<Link to={ `${ BANNER_SLIDER.reverse()[picIndex].urlPath }` }>Zobacz</Link>
+				<Link to={ `${ BANNER_SLIDER[picIndex].urlPath }` }>Zobacz</Link>
 			</div>
 			{/* <div className={ styles.dots }>{ dots }</div> */ }
 		</div>

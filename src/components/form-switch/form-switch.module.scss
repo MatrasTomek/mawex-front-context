@@ -64,6 +64,13 @@
                         }
                     }
 
+                    textarea {
+                        flex-basis: 70%;
+                        height: 100px;
+                        border-radius: $radius;
+                        padding: 10px;
+                    }
+
                     span {
                         flex-basis: 100%;
                         color: red;

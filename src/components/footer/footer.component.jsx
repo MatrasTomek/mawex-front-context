@@ -1,4 +1,4 @@
-import { footerContent } from "../../content/footer-content";
+import { CONTACT_INFO } from "../../content/contact-content";
 import styles from "./footer.module.scss";
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
         phone,
         mail,
         facebook,
-        gmp } = footerContent;
+        gmp } = CONTACT_INFO;
 
     return (
         <div className={ styles.footerWrapper }>

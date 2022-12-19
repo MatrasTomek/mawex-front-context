@@ -99,6 +99,24 @@
         }
     }
 
+    @media screen and (min-width:map-get($breakpoints, large)) {
+
+
+        .inside {
+            .contents {
+
+                a {
+                    transition: $transition;
+
+                    &:hover {
+                        color: $greyDark;
+                    }
+
+                }
+            }
+        }
+    }
+
     @media screen and (min-width:map-get($breakpoints, xlarge)) {
         width: 33%;
 

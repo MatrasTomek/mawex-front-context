@@ -17,7 +17,7 @@ export const offerSection = [
 		title: "Analiza czasu pracy kierowców",
 		content:
 			"Nasi specjaliści dysponują profesjonalnym i specjalistycznym sprzętem oraz niezbędną wiedzą na temat przepisów, aby dokonać precyzyjnej analizy zapisów z analogowych i cyfrowych tachografów. Samodzielna analiza, daje zwykle niepełny obraz o popełnianych wykroczeniach w czasie pracy kierowców. Analizując czas pracy możemy szybko zareagować na najczęściej popełniane wykroczenia i zminimalizować wysokość kar w przyszłości. Nasz specjalista przygotuje pełen zestaw raportów z danego okresu, zawierający przejrzysty czas pracy kierowcy, samochodu, wraz z opisem popełnionych naruszeń i wysokością możliwych kar finansowych. Analiza czasu pracy kierowców umożliwia ich kontrolę pod kątem przestrzegania Rozporządzenia 561/2006 oraz Umowy AETR.",
-		linkPath: "analiza-czasu-pracy-kierowców",
+		linkPath: "analiza-czasu-pracy-kierowcow",
 	},
 	{
 		id: 1,

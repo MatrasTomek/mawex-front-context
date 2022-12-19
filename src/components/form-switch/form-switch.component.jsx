@@ -106,7 +106,7 @@ const FormSwitch = ({ isContactForm }) => {
                                             name="content"
                                             component="textarea"
                                             type="text"
-                                            placeholder="wpisz tekst"
+                                            placeholder="wpisz tekst..."
                                         />
                                     </div>
                                 ) : "" }
