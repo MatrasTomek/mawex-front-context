@@ -1,0 +1,104 @@
+@import "../../global-styles/common.scss";
+
+.wrapper {
+    width: 100%;
+    min-height: 40vh;
+
+    .banner {
+        width: 100%;
+        height: 30vh;
+        background-image: url("../../assets/images/benefits-page/money-2696228_640.jpg");
+        background-size: cover;
+        background-position: center;
+
+        h1 {
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: $greyLight;
+            text-transform: uppercase;
+        }
+    }
+
+    .infoConetnt {
+        width: 90%;
+        margin: 20px auto;
+
+        .content1,
+        .content2 {
+            margin-bottom: 30px;
+
+            h3 {
+                color: $blueNormal;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style: square;
+
+                li {
+                    font-size: $sizeXXS;
+                    margin-left: 20px;
+
+                }
+            }
+        }
+
+
+    }
+
+    @media screen and (orientation: landscape) {
+        .banner {
+            height: auto;
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, small)) {
+        .banner {
+            height: 30vh;
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, medium)) {
+        .infoConetnt {
+
+
+            .content1,
+            .content2 {
+
+                ul {
+
+                    li {
+                        font-size: $sizeXS;
+
+                    }
+                }
+            }
+
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+        .banner {
+            background-image: url("../../assets/images/benefits-page/money-2696228_1920.jpg");
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        .infoConetnt {
+
+
+            .content1,
+            .content2 {
+
+                ul {
+
+                    li {
+                        font-size: $sizeS;
+
+                    }
+                }
+            }
+
+        }
+    }
+}

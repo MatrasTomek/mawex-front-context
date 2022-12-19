@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Navigation, Home, Offer, SubRoutes, CertPage } from "./routes";
+import { Navigation, Home, Offer, SubRoutes, CertPage, BenefitsPage } from "./routes";
 import { Footer } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
 
@@ -16,6 +16,7 @@ const App = () => {
 					<Route path="/offer" element={<Offer />} />
 					{offerSubRoutes}
 					<Route path="/certificates" element={<CertPage />} />
+					<Route path="/benefits" element={<BenefitsPage />} />
 				</Route>
 			</Routes>
 			<Footer />
