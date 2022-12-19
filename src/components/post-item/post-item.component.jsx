@@ -24,7 +24,10 @@ const PostItem = ({ postItem, homePage }) => {
                     { !isTextShow ? (
                         <p>{ content1.substring(0, 120) } . . .</p>
                     ) : (
-                        <p>{ content1 }</p>
+                        <>
+                            <p>{ content1 }</p>
+                            <p>{ content2 }</p>
+                        </>
                     ) }
 
                     { homePage ? (
@@ -32,7 +35,7 @@ const PostItem = ({ postItem, homePage }) => {
                     ) : (
                         <Button type="button" name={ !isTextShow ? "więcej" : "mniej" } onClick={ handleShowMoreText } />
                     ) }
-                    <p>{ content2 }</p>
+
                     { link === "" || link === null ? "" : (<a href={ `${ link }` }>Link do artykułu</a>) }
                 </div>
                 <div className={ styles.signature }>

@@ -71,14 +71,15 @@
 
     @media screen and (min-width:map-get($breakpoints, medium)) {
         .infoConetnt {
-            display: flex;
-            justify-content: space-between;
+            position: relative;
             margin: 40px auto;
+            height: 600px;
 
             .content1,
             .content2 {
                 padding: 30px;
-                flex-basis: 48%;
+                position: absolute;
+                width: 60%;
 
                 ul {
 
@@ -89,6 +90,16 @@
                 }
             }
 
+            .content1 {
+                top: 0;
+                left: 0;
+            }
+
+            .content2 {
+                top: 50%;
+                left: 70%;
+                transform: translateX(-50%);
+            }
         }
     }
 

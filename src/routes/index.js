@@ -6,3 +6,4 @@ export { default as CertPage } from "./cert-page";
 export { default as BenefitsPage } from "./benefits-page";
 export { default as LawPage } from "./law-page";
 export { default as ContactPage } from "./contact-page";
+export { default as BlogPage } from "./blog-page";

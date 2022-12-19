@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { Navigation, Home, Offer, SubRoutes, CertPage, BenefitsPage, LawPage, ContactPage } from "./routes";
+import { Navigation, Home, Offer, SubRoutes, CertPage, BenefitsPage, LawPage, ContactPage, BlogPage } from "./routes";
 import { Footer } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
 
@@ -19,6 +19,7 @@ const App = () => {
 					<Route path="/benefits" element={<BenefitsPage />} />
 					<Route path="/law" element={<LawPage />} />
 					<Route path="/contact" element={<ContactPage />} />
+					<Route path="/blog" element={<BlogPage />} />
 				</Route>
 			</Routes>
 			<Footer />
