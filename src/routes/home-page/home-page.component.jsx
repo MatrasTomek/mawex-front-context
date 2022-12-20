@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { BannerSlider, Button, PostItem, MinPostItem } from "../../components";
+import { BannerSlider, Button, PostItem, MinPostItem, Spinner } from "../../components";
 import { firstSection, offerSection } from "../../content/homepage-content";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
 import styles from "./home-page.module.scss";
@@ -15,6 +15,7 @@ const Home = () => {
 
     const posts = useContext(BlogItemsContext);
 
+    console.log(posts);
 
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {
@@ -52,9 +53,9 @@ const Home = () => {
 
 
     const firstThreePostsViev = !posts.data ? (
-        <div>
-            <h4>Status: { posts.status }</h4>
-            <h4>{ posts.message }</h4>
+        <div className={ styles.spinner }>
+            <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
+            <Spinner isOpen={ !posts.data ? false : true } />
         </div>
     ) : (
         firstThreePosts.map((item) => (<PostItem key={ item._id } postItem={ item } homePage={ true } />))

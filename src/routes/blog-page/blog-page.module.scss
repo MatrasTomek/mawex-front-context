@@ -3,6 +3,13 @@
 .blogWrapper {
     width: 80%;
     margin: 30px auto;
+    min-height: 60vh;
+
+    .spinner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     @media screen and (orientation: landscape) {
         width: 90%;

@@ -31,7 +31,7 @@ const PostItem = ({ postItem, homePage }) => {
                     ) }
 
                     { homePage ? (
-                        <Link to="/">czytaj dalej</Link>
+                        <Link to="/blog">czytaj dalej</Link>
                     ) : (
                         <Button type="button" name={ !isTextShow ? "więcej" : "mniej" } onClick={ handleShowMoreText } />
                     ) }

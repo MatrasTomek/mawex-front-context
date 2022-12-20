@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
-import { PostItem } from "../../components";
+import { PostItem, Spinner } from "../../components";
 import styles from "./blog-page.module.scss";
 
 const BlogPage = () => {
@@ -14,6 +14,10 @@ const BlogPage = () => {
 
     return (
         <div className={ styles.blogWrapper }>
+            <div className={ styles.spinner }>
+                <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
+                <Spinner isOpen={ !posts.data ? false : true } />
+            </div>
             { postsViev }
         </div>
     );

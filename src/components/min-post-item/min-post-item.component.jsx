@@ -7,7 +7,7 @@ const MinPostItem = ({ postItem }) => {
 
     return (
 
-        <Link to="/" className={ styles.minPostWrapper }>
+        <Link to="/blog" className={ styles.minPostWrapper }>
             <div className={ styles.inside }>
                 <h4>{ title }</h4>
                 <p>{ date }</p>
