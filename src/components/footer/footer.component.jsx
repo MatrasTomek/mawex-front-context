@@ -1,4 +1,5 @@
 import { CONTACT_INFO } from "../../content/contact-content";
+import { UpArrow } from "..";
 import styles from "./footer.module.scss";
 
 const Footer = () => {
@@ -30,9 +31,9 @@ const Footer = () => {
                     <a href={ `${ facebook }` } target="blank" className={ styles.face }>
                         <img src="/images/Popular-Logo-facebook-icon-png.png" alt="Facebook logo" />
                     </a>
+                    <UpArrow />
                 </div>
             </div>
-
         </div>
     );
 };

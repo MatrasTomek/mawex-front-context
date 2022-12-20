@@ -98,12 +98,9 @@
                 padding: 30px;
                 flex-basis: 40%;
 
-                ul {
-
-                    li {
-                        font-size: $sizeXS;
-
-                    }
+                p,
+                a {
+                    font-size: $sizeXS;
                 }
             }
 
@@ -129,12 +126,9 @@
 
             .content1 {
 
-                ul {
-
-                    li {
-                        font-size: $sizeS;
-
-                    }
+                p,
+                a {
+                    font-size: $sizeS;
                 }
             }
 

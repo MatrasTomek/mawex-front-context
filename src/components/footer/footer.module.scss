@@ -142,7 +142,7 @@
                     transition: $transition;
 
                     &:hover {
-                        background-color: rgb(5, 219, 5);
+                        background-color: $blueNormal;
                     }
                 }
             }

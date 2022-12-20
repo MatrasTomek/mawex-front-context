@@ -14,11 +14,14 @@ const BlogPage = () => {
 
     return (
         <div className={ styles.blogWrapper }>
-            <div className={ styles.spinner }>
-                <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
-                <Spinner isOpen={ !posts.data ? false : true } />
-            </div>
-            { postsViev }
+            { !posts.data ? (
+                <div className={ styles.spinner }>
+                    <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
+                    <Spinner isOpen={ !posts.data ? false : true } />
+                </div>
+            ) : (
+                postsViev
+            ) }
         </div>
     );
 

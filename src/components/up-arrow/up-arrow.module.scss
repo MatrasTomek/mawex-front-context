@@ -1,0 +1,15 @@
+@import "../../global-styles/common.scss";
+
+.arrowWrapper {
+
+    cursor: pointer;
+
+    svg {
+        fill: $greyLight;
+        transition: $transition;
+    }
+
+    &:hover>svg {
+        fill: red;
+    }
+}

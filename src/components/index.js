@@ -6,3 +6,4 @@ export { default as MinPostItem } from "./min-post-item";
 export { default as FormSwitch } from "./form-switch";
 export { default as Maps } from "./maps";
 export { default as Spinner } from "./spinner";
+export { default as UpArrow } from "./up-arrow";

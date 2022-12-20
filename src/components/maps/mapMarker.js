@@ -5,7 +5,7 @@ import { Marker } from "@react-google-maps/api";
 
 const MapMarker = ({ setZoom }) => {
 	const handleOnClickMarker = () => {
-		setZoom(10);
+		setZoom(18);
 	};
 
 	const position = { lat: 49.97386, lng: 20.62926 };
