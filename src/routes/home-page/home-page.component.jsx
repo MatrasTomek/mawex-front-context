@@ -15,8 +15,6 @@ const Home = () => {
 
     const posts = useContext(BlogItemsContext);
 
-    console.log(posts);
-
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {
         if (e.target.id === "home-next") {

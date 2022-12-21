@@ -39,7 +39,7 @@ const Navigation = () => {
                     <Link to="/law" onClick={ handleOpenCloseMenu }>Prawo</Link>
                     <Link to="/blog" onClick={ handleOpenCloseMenu }>Blog</Link>
                     <Link to="/contact" onClick={ handleOpenCloseMenu }>Kontakt</Link>
-                    <Link to="/" onClick={ handleOpenCloseMenu }>Wypożyczalnia</Link>
+                    <Link to="/reservation" onClick={ handleOpenCloseMenu }>Wypożyczalnia</Link>
                 </div>
             </div>
             <Outlet />
