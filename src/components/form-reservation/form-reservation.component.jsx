@@ -4,7 +4,7 @@ import ReactDatePicker, { registerLocale, setdefaultLocale } from 'react-datepic
 import "react-datepicker/dist/react-datepicker.css";
 import { startOfHour, addHours } from "date-fns";
 import { Button } from "..";
-import { sendQuoteMail, sendInfoMail } from "../../utils/mails.utils";
+import { sendReservationMail } from "../../utils/mails.utils";
 import { BASIC_CARS } from "../../content/reservation-content";
 import styles from "./form-reservation.module.scss";
 
@@ -19,11 +19,13 @@ const FormReservation = () => {
     const [mailResInfo, setMeilResInfo] = useState(null);
 
     const presentDay = new Date().toLocaleDateString();
-    console.log(presentDay);
+
 
     const onSubmit = async values => {
 
-        console.log(values);
+        const mailRes = await sendReservationMail(values);
+        setMeilResInfo(mailRes);
+
     };
 
     const carsChooseOptions = BASIC_CARS.map((item) => (
@@ -35,10 +37,7 @@ const FormReservation = () => {
         <div className={ styles.formWrapper }>
             <div className={ styles.form }>
                 <Form
-                    initialValues={ {
 
-                        start: addHours(startOfHour(new Date()), 1)
-                    } }
                     onSubmit={ onSubmit }
                     render={ ({ handleSubmit, form, submitting, pristine, values }) => (
                         <form
@@ -67,7 +66,7 @@ const FormReservation = () => {
 
                                 </Field>
                                 <Field
-                                    name="from"
+                                    name="reservationFrom"
                                     validate={ required }
                                 >
                                     { ({ input, meta }) => (
@@ -79,7 +78,7 @@ const FormReservation = () => {
                                     ) }
 
                                 </Field>
-                                <Field name="to" validate={ required }>
+                                <Field name="reservationTo" validate={ required }>
                                     { ({ input, meta }) => (
                                         <div>
                                             <label >Rezerwacja do</label>
@@ -127,7 +126,7 @@ const FormReservation = () => {
                                     { ({ input, meta }) => (
                                         <div>
                                             <label>telefon</label>
-                                            <input { ...input } type="tel" placeholder="123 456 789" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" />
+                                            <input { ...input } type="tel" placeholder="123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" />
                                             { meta.error && meta.touched && <span>{ meta.error }</span> }
                                         </div>
                                     ) }

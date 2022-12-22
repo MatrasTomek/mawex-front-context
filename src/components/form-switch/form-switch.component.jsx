@@ -91,7 +91,7 @@ const FormSwitch = ({ isContactForm }) => {
                                     { ({ input, meta }) => (
                                         <div>
                                             <label>telefon</label>
-                                            <input { ...input } type="tel" placeholder="123 456 789" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" />
+                                            <input { ...input } type="tel" placeholder="123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{3}" />
                                             { meta.error && meta.touched && <span>{ meta.error }</span> }
                                         </div>
                                     ) }

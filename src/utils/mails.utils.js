@@ -11,7 +11,7 @@ export const sendQuoteMail = async (formData) => {
 	if (status === 200) {
 		return data.message;
 	} else {
-		return data.message;
+		return "Przepraszamy błąd po stronie serwera - spróbuj jeszce raz za chwilę.";
 	}
 };
 
@@ -20,6 +20,15 @@ export const sendInfoMail = async (formData) => {
 	if (status === 200) {
 		return data.message;
 	} else {
+		return "Przepraszamy błąd po stronie serwera - spróbuj jeszce raz za chwilę.";
+	}
+};
+
+export const sendReservationMail = async (formData) => {
+	const { data, status } = await request.post("mail/reservation", formData);
+	if (status === 200) {
 		return data.message;
+	} else {
+		return "Przepraszamy błąd po stronie serwera - spróbuj jeszce raz za chwilę.";
 	}
 };
