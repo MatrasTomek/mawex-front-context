@@ -1,0 +1,102 @@
+@import "../../global-styles/common.scss";
+
+.image {
+    position: relative;
+    width: 95vw;
+    height: 95vh;
+    background-position: center;
+    background-size: cover;
+    border: 1px solid black;
+
+    p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // background-color: white;
+        color: black;
+        opacity: 0.6;
+        z-index: 100;
+    }
+
+    .buttons {
+        position: absolute;
+        bottom: 2%;
+        width: 100%;
+        height: 40px;
+        margin: 10px auto;
+
+        .left {
+            position: absolute;
+            top: 50%;
+            left: 0px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            // background-image: url("../../assets/images//reservation-page/baseline_keyboard_double_arrow_left_black_24dp.png");
+            background-size: cover;
+            background-position: center;
+
+            z-index: 10;
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                background-color: $greyDark;
+            }
+
+            @media screen and (min-width: map-get($breakpoints, medium)) {
+                left: 2%;
+            }
+        }
+
+        .right {
+            position: absolute;
+            top: 50%;
+            right: 0px;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            // background-image: url("../../assets/images/reservation-page/baseline_keyboard_double_arrow_right_black_24dp.png");
+            background-size: cover;
+            background-position: center;
+            z-index: 10;
+            transition: $transition;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $greyDark;
+            }
+
+            @media screen and (min-width: map-get($breakpoints, medium)) {
+                right: 2%;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include standardButton;
+        }
+
+        .none {
+            display: none;
+        }
+    }
+
+    @media screen and (orientation: landscape) and (min-width: map-get($breakpoints, large)) {
+        width: 65vw;
+    }
+
+    @media screen and (orientation: landscape) and (min-width: map-get($breakpoints, xlarge)) {
+        width: 50vw;
+    }
+}
