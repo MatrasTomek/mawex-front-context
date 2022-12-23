@@ -8,13 +8,9 @@ const ReservationPage = () => {
     const [modalOpen, setModalOpen] = useState(false);
     const [pictureName, setPictureName] = useState("");
 
-    const catalogName = "";
-    // const pictureEnd = "";
-    const arrayOfPictures = [];
-
 
     const handleShowPicture = (e) => {
-        console.log(e.target.id);
+
         setModalOpen(true);
         setPictureName(e.target.id);
 
