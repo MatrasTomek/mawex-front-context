@@ -14,6 +14,12 @@ const PostItem = ({ postItem, homePage }) => {
         setIsTextShow(!isTextShow);
     };
 
+    const sortedContent1 = content1.split(/\n/);
+    const vievContent1 = sortedContent1.map((item, index) => <p key={ index }>{ item }</p>);
+
+    const sortedContent2 = !content2 ? null : content2.split(/\n/);
+    const vievContent2 = !sortedContent2 ? "" : sortedContent2.map((item, index) => <p key={ index }>{ item }</p>);
+
     return (
         <div className={ styles.postWrapper }>
             <div className={ styles.inside }>
@@ -25,8 +31,12 @@ const PostItem = ({ postItem, homePage }) => {
                         <p>{ content1.substring(0, 120) } . . .</p>
                     ) : (
                         <>
-                            <p>{ content1 }</p>
-                            <p>{ content2 }</p>
+                            <div className={ styles.content1 }>
+                                { vievContent1 }
+                            </div>
+                            <div className={ styles.content2 }>
+                                { vievContent2 }
+                            </div>
                         </>
                     ) }
 

@@ -1,8 +1,5 @@
 import { useState } from 'react';
 import { Form, Field } from 'react-final-form';
-import ReactDatePicker, { registerLocale, setdefaultLocale } from 'react-datepicker';
-import "react-datepicker/dist/react-datepicker.css";
-import { startOfHour, addHours } from "date-fns";
 import { Button } from "..";
 import { sendReservationMail } from "../../utils/mails.utils";
 import { BASIC_CARS } from "../../content/reservation-content";
@@ -17,9 +14,6 @@ const required = value => (value ? undefined : 'Wymagane');
 const FormReservation = () => {
 
     const [mailResInfo, setMeilResInfo] = useState(null);
-
-    const presentDay = new Date().toLocaleDateString();
-
 
     const onSubmit = async values => {
 
@@ -72,9 +66,11 @@ const FormReservation = () => {
                                     { ({ input, meta }) => (
                                         <div>
                                             <label>Rezerwacja od</label>
-                                            <input type="date" { ...input } min={ `${ presentDay }` } />
+                                            <input type="datetime-local" { ...input } />
+
                                             { meta.error && meta.touched && <span>{ meta.error }</span> }
                                         </div>
+
                                     ) }
 
                                 </Field>
@@ -82,7 +78,7 @@ const FormReservation = () => {
                                     { ({ input, meta }) => (
                                         <div>
                                             <label >Rezerwacja do</label>
-                                            <input type="date" { ...input } />
+                                            <input type="datetime-local" { ...input } />
                                             { meta.error && meta.touched && <span>{ meta.error }</span> }
                                         </div>
                                     ) }

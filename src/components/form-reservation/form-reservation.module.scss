@@ -75,7 +75,8 @@
                     }
 
                     select,
-                    input[type="date"] {
+                    input[type="datetime-local"] {
+
                         flex-basis: 60%;
                         padding: 4px;
                         border: none;
@@ -144,7 +145,7 @@
 
 
                         select,
-                        input[type="date"] {
+                        input[type="datetime-local"] {
                             flex-basis: 30%;
                         }
                     }
