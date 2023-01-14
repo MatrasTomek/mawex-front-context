@@ -1,8 +1,8 @@
-
+import React from 'react';
 import { Link } from "react-router-dom";
 import styles from "./min-post-item.module.scss";
 
-const MinPostItem = ({ postItem }) => {
+const MinPostItem = React.memo(({ postItem }) => {
     const { title, date, userName } = postItem;
 
     return (
@@ -16,6 +16,6 @@ const MinPostItem = ({ postItem }) => {
             </div>
         </Link>
     );
-};
+});
 
 export default MinPostItem;

@@ -1,10 +1,10 @@
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components";
 import styles from "./post-item.module.scss";
 
-const PostItem = ({ postItem, homePage }) => {
+const PostItem = React.memo(({ postItem, homePage }) => {
 
     const { title, content1, content2, date, imgPath, link, userName } = postItem;
 
@@ -56,6 +56,6 @@ const PostItem = ({ postItem, homePage }) => {
         </div>
     );
 
-};
+});
 
 export default PostItem;
