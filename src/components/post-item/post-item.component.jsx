@@ -23,7 +23,7 @@ const PostItem = ({ postItem, homePage }) => {
     return (
         <div className={ styles.postWrapper }>
             <div className={ styles.inside }>
-                <img src={ `${ imgPath }` } alt={ `${ imgPath }` } />
+                <img src={ `https://www.testy.developerweb.pl/${ imgPath }` } alt={ `${ imgPath }` } />
                 <div className={ styles.contents }>
                     <h4>{ title }</h4>
 

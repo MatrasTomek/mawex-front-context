@@ -45,17 +45,17 @@ export const LAW_CONETNT = [
 				path: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX%3A02009R1071-20220221",
 			},
 			{
-				id: "6-eu",
+				id: "7-eu",
 				name: "Rozporządzenie (WE) nr 1072/2009",
 				path: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX%3A02009R1072-20220221",
 			},
 			{
-				id: "6-eu",
+				id: "8-eu",
 				name: "Rozporządzenie (WE) nr 1073/2009",
 				path: "https://eur-lex.europa.eu/legal-content/PL/ALL/?uri=CELEX%3A32009R1073",
 			},
 			{
-				id: "7-eu",
+				id: "9-eu",
 				name: "Parlamentu Europejskiego i Rady (EU) nr 165/2014",
 				path: "https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX%3A02014R0165-20200820",
 			},
