@@ -51,7 +51,6 @@
             position: absolute;
             left: 10%;
             top: 60%;
-            // opacity: 0;
             transition: 3s;
 
             // animation: contentShow 7s infinite;
@@ -60,7 +59,10 @@
                 color: $greyLight;
                 font-weight: 700;
                 font-size: $sizeXXL;
-                text-shadow: 4px 4px $greyDarness;
+                background-color: $black;
+                opacity: 0.85;
+                padding: 5px 40px;
+                border-radius: $radius;
             }
 
         }
