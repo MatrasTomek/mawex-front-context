@@ -1,22 +1,34 @@
-import { Fragment, useState } from 'react';
+import { useContext, Fragment, useState } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { DropDownMenu } from "../../routes";
+import { ReservationContext } from "../../contexts/reservation-view.context";
 import styles from "./navigation.module.scss";
+import { logDOM } from '@testing-library/react';
 
 const Navigation = () => {
 
+    const {isReasrvartionPage, setIsReasrvartionPage} = useContext(ReservationContext)
+
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const handleOpenCloseMenu = () => {
+    const handleOpenCloseMenu = (e) => {
         setIsMenuOpen(!isMenuOpen);
+       if(e.target.id === "reservation"){
+        setIsReasrvartionPage(true)
+       } else {
+        setIsReasrvartionPage(false)
+       }
     };
+
+    console.log(isReasrvartionPage);
+
 
     return (
         <Fragment>
             <div className={ styles.navWrapper }>
-                <Link to="/">
+                <Link to="/" className={styles.navLink}>
                     <div className={ styles.navLogo }>
-                        <img src="images/logo_3.png" alt="logo" />
+                      { !isReasrvartionPage ? ( <img src="images/logo_maw.png" alt="logo" />) : ( <img src="images/logo_wyp.png" alt="logo-wypozyczalnia" />)}
                     </div>
                 </Link>
                 <div className={ styles.navBurger } onClick={ handleOpenCloseMenu }>
@@ -31,15 +43,15 @@ const Navigation = () => {
 
                 </div>
                 <div className={ !isMenuOpen ? styles.navLinksClose : styles.navLinksOpen }>
-                    <Link to="/" onClick={ handleOpenCloseMenu }>Home</Link>
-                    <Link to="/offer" onClick={ handleOpenCloseMenu }>Oferta</Link>
+                    <Link id="start" to="/" onClick={ handleOpenCloseMenu }>Home</Link>
+                    <Link id="offer" to="/offer" onClick={ handleOpenCloseMenu }>Oferta</Link>
                     {/* <DropDownMenu /> */ }
-                    <Link to="/certificates" onClick={ handleOpenCloseMenu }>Certyfikaty</Link>
-                    <Link to="/benefits" onClick={ handleOpenCloseMenu }>Korzyści</Link>
-                    <Link to="/law" onClick={ handleOpenCloseMenu }>Prawo</Link>
-                    <Link to="/blog" onClick={ handleOpenCloseMenu }>Blog</Link>
-                    <Link to="/contact" onClick={ handleOpenCloseMenu }>Kontakt</Link>
-                    <Link to="/reservation" onClick={ handleOpenCloseMenu }>Wypożyczalnia</Link>
+                    <Link id="certificates" to="/certificates" onClick={ handleOpenCloseMenu }>Certyfikaty</Link>
+                    <Link id="benefits" to="/benefits" onClick={ handleOpenCloseMenu }>Korzyści</Link>
+                    <Link id="law" to="/law" onClick={ handleOpenCloseMenu }>Prawo</Link>
+                    <Link id="blog" to="/blog" onClick={ handleOpenCloseMenu }>Blog</Link>
+                    <Link id="contact" to="/contact" onClick={ handleOpenCloseMenu }>Kontakt</Link>
+                    <Link id="reservation" to="/reservation" onClick={ handleOpenCloseMenu }>Wypożyczalnia</Link>
                 </div>
             </div>
             <Outlet />

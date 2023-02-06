@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { BannerSlider, Button, PostItem, MinPostItem, Spinner } from "../../components";
 import { firstSection, offerSection } from "../../content/homepage-content";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
+import { ReservationContext } from "../../contexts/reservation-view.context";
 import styles from "./home-page.module.scss";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
     const [isBox3Open, setIsBox3Open] = useState(false);
 
     const posts = useContext(BlogItemsContext);
+    const {isReasrvartionPage, setIsReasrvartionPage} = useContext(ReservationContext)
 
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {

@@ -12,14 +12,18 @@
     align-items: center;
     background-color: white;
 
-    .navLogo {
-        flex-basis: 30%;
+    .navLink {
+        width: 150px;
+        height: 130px;
 
-        img {
-            // width: 140px;
-            // height: 120px;
-            width: 105px;
-            height: 90px;
+        .navLogo {
+            width: 100%;
+            height: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 
@@ -42,7 +46,7 @@
     .navLinksOpen {
         display: none;
         position: absolute;
-        top: 90px;
+        top: 125px;
         left: 0;
         width: 100%;
         height: 270px;
@@ -70,6 +74,10 @@
 
     @media screen and (orientation: landscape) {
 
+        .navLink {
+            height: 120px;
+        }
+
         .navLinksClose,
         .navLinksOpen {
             height: 130px;
@@ -88,6 +96,11 @@
 
     @media screen and (min-width:map-get($breakpoints, medium)) {
 
+        .navLink {
+            width:160px ;
+            height: 135px;
+        }
+
         .navLinksClose,
         .navLinksOpen {
             flex-direction: row;
@@ -104,17 +117,9 @@
     }
 
     @media screen and (min-width:map-get($breakpoints, large)) {
-        .navLogo {
-
-            flex-basis: 10%;
-
-            img {
-                // width: 140px;
-                // height: 120px;
-                width: 110px;
-                height: 100px;
-
-            }
+        .navLink {
+            width:170px ;
+            height: 140px;
         }
 
 
@@ -151,5 +156,10 @@
         }
     }
 
-    @media screen and (min-width:map-get($breakpoints, xLarge)) {}
+    @media screen and (min-width:map-get($breakpoints, xlarge)) {
+        .navLink {
+            width:180px ;
+            height: 150px;
+        }
+    }
 }
