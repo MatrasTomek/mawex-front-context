@@ -1,91 +1,110 @@
 @import "../../global-styles/common.scss";
 
 .wrapper {
-    @include wrapper;
-    margin-bottom: 40px;
+  @include wrapper;
+  margin-bottom: 40px;
 
-    h2 {
-        color: $blueNormal;
+  h2 {
+    color: $blueNormal;
+    margin-bottom: 20px;
+  }
+  a {
+    margin-bottom: 10px;
+    border: 1px solid $greyDarness;
+    border-radius: $radius;
+    padding: 10px;
+    color: $greyLight;
+    font-weight: 700;
+    font-size: $sizeXXS;
+    background-color: $greyDarness;
+    transition: $transition;
+  }
+
+  .info {
+    margin-top: 30px;
+
+    h3 {
+      color: $blueNormal;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      justify-content: center;
+
+      a {
+        margin-bottom: 10px;
+        border: 1px solid $greyDarness;
+        border-radius: $radius;
+        padding: 10px;
+        color: $greyLight;
+        font-weight: 700;
+        font-size: $sizeXXS;
+        background-color: $greyDarness;
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, small)) {
+    .info {
+      ul {
+        a {
+          width: 80%;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    a {
+      &:hover {
+        color: $greyDarness;
+        background-color: $greyLight;
+      }
     }
 
     .info {
-        margin-top: 30px;
-
-        h3 {
-            color: $blueNormal;
-            margin-bottom: 20px;
+      ul {
+        a {
+          width: 70%;
+          font-size: $sizeXS;
         }
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            justify-content: center;
-
-            a {
-                margin-bottom: 10px;
-                border: 1px solid $greyDarness;
-                border-radius: $radius;
-                padding: 10px;
-                color: $greyLight;
-                font-weight: 700;
-                font-size: $sizeXXS;
-                background-color: $greyDarness;
-            }
-        }
+      }
     }
+  }
 
-    @media screen and (min-width:map-get($breakpoints, small)) {
-        .info {
-            ul {
-                a {
-                    width: 80%;
-                }
-            }
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .info {
+      ul {
+        a {
+          width: 60%;
+          text-decoration: none;
+          transition: $transition;
+
+          &:hover {
+            color: $greyDarness;
+            background-color: $greyLight;
+          }
         }
+      }
     }
+  }
 
-    @media screen and (min-width:map-get($breakpoints, medium)) {
-        .info {
-            ul {
-                a {
-                    width: 70%;
-                    font-size: $sizeXS;
-                }
-            }
+  @media screen and (min-width: map-get($breakpoints, xlarge)) {
+    .info {
+      ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+          width: 45%;
+          font-size: $sizeS;
         }
+      }
     }
-
-    @media screen and (min-width:map-get($breakpoints, large)) {
-        .info {
-            ul {
-                a {
-                    width: 60%;
-                    text-decoration: none;
-                    transition: $transition;
-
-                    &:hover {
-                        color: $greyDarness;
-                        background-color: $greyLight;
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (min-width:map-get($breakpoints, xlarge)) {
-        .info {
-            ul {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                align-items: center;
-
-                a {
-                    width: 45%;
-                    font-size: $sizeS;
-                }
-            }
-        }
-    }
+  }
 }

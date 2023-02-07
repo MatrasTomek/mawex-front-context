@@ -12,7 +12,10 @@ const Offer = () => {
     return (
 
         <div className={ styles.wrapper }>
+            <div className={styles.title}>
             <h2>Nasza Oferta</h2>
+            <a href='/documents/cennik_Mawex_2023.pdf' target='blanck' >Zobacz cennik</a>
+            </div>
             <FormSwitch isContactForm={ false } />
             <div className={ styles.info }>
                 <h3>Zobacz wszystkie oferty:</h3>
