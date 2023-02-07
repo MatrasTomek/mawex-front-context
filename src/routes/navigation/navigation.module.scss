@@ -1,165 +1,153 @@
 @import "../../global-styles/common.scss";
 
 .navWrapper {
-    position: -webkit-sticky;
-    /* Safari */
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
 
-    .navLink {
-        width: 150px;
-        height: 130px;
+  .navLink {
+    width: 150px;
+    height: 130px;
 
-        .navLogo {
-            width: 100%;
-            height: 100%;
+    .navLogo {
+      width: 100%;
+      height: 100%;
 
-            img {
-                width: 100%;
-                height: 100%;
-            }
-        }
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
+  }
 
-    .navBurger {
-        flex-basis: 25%;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+  .navBurger {
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
-        svg {
-            height: 40px;
-            width: 35px;
-            fill: $blueNormal;
-            margin-right: 20px;
+    svg {
+      height: 40px;
+      width: 35px;
+      fill: $blueNormal;
+      margin-right: 20px;
+    }
+  }
 
-        }
+  .navLinksClose,
+  .navLinksOpen {
+    display: none;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    width: 100%;
+    height: 270px;
+    background-color: $greyDark;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.5s;
+    opacity: 0;
+
+    a {
+      text-decoration: none;
+      margin-bottom: 10px;
+      color: $greyLight;
+      font-weight: 700;
+    }
+  }
+
+  .navLinksOpen {
+    opacity: 0.95;
+    display: flex;
+  }
+
+  @media screen and (orientation: landscape) {
+    .navLink {
+      height: 120px;
     }
 
     .navLinksClose,
     .navLinksOpen {
-        display: none;
-        position: absolute;
-        top: 125px;
-        left: 0;
-        width: 100%;
-        height: 270px;
-        background-color: $greyDark;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        transition: 0.5s;
-        opacity: 0;
+      height: 130px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
 
-
-        a {
-            text-decoration: none;
-            margin-bottom: 10px;
-            color: $greyLight;
-            font-weight: 700;
-        }
+      a {
+        flex-basis: 20%;
+        margin-bottom: 0px;
+        text-align: center;
+      }
     }
+  }
 
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    .navLinksClose,
     .navLinksOpen {
-        opacity: 0.95;
-        display: flex;
+      height: 290px;
 
+      a {
+        font-size: $sizeS;
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .navLink {
+      width: 170px;
+      height: 140px;
     }
 
-    @media screen and (orientation: landscape) {
-
-        .navLink {
-            height: 120px;
-        }
-
-        .navLinksClose,
-        .navLinksOpen {
-            height: 130px;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-
-
-            a {
-                flex-basis: 20%;
-                margin-bottom: 0px;
-                text-align: center;
-            }
-        }
+    .navBurger {
+      display: none;
     }
 
-    @media screen and (min-width:map-get($breakpoints, medium)) {
+    .navLinksClose,
+    .navLinksOpen {
+      flex-basis: 90%;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 0;
+      opacity: 1;
+      background-color: transparent;
+      height: 90px;
 
-        .navLink {
-            width:160px ;
-            height: 135px;
+      a {
+        flex-basis: 10%;
+        color: $greyDarness;
+        text-align: center;
+        margin-left: 20px;
+
+        &:hover {
+          color: $blueNormal;
+          transform: scale(1.1);
         }
+      }
+    }
+  }
 
-        .navLinksClose,
-        .navLinksOpen {
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            height: 130px;
-            position: relative;
-
-            a {
-                font-size: $sizeS;
-            }
-
-        }
+  @media screen and (min-width: map-get($breakpoints, xlarge)) {
+    .navLink {
+      width: 180px;
+      height: 150px;
     }
 
-    @media screen and (min-width:map-get($breakpoints, large)) {
-        .navLink {
-            width:170px ;
-            height: 140px;
-        }
-
-
-        .navBurger {
-            display: none;
-        }
-
-        .navLinksClose,
-        .navLinksOpen {
-            flex-basis: 90%;
-            display: flex;
-            flex-wrap: nowrap;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            top: 0;
-            opacity: 1;
-            background-color: transparent;
-            height: 90px;
-
-
-            a {
-                flex-basis: 5%;
-                color: $greyDarness;
-                text-align: left;
-                margin-left: 20px;
-
-                &:hover {
-                    color: $blueNormal;
-                    transform: scale(1.1);
-                }
-
-            }
-        }
+    .navLinksClose,
+    .navLinksOpen {
+        a {
+            flex-basis: 8%;
+          }
     }
-
-    @media screen and (min-width:map-get($breakpoints, xlarge)) {
-        .navLink {
-            width:180px ;
-            height: 150px;
-        }
-    }
+  }
 }
