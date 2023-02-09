@@ -28,7 +28,7 @@ export const BASIC_CARS = [
     fuel: "PB+LPG",
     hp: 297,
     price: 290.0,
-    img: "",
+    img: "/images/reservation/jaguar_jxf.jpg",
   },
 
   {
