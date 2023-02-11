@@ -21,5 +21,35 @@
     background-color: white;
     color: black;
     border-radius: $radius;
+    width: 85%;
+    height: 80%;
+  }
+  @media screen and (orientation: landscape) {
+    .wrapper {
+      width: 55%;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, small)) {
+    .wrapper {
+      width: 80%;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    .wrapper {
+      top: 45%;
+      width: 600px;
+      height: auto;
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .wrapper {
+      width: 550px;
+      height: auto;
+    }
   }
 }

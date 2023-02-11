@@ -1,50 +1,86 @@
 @import "../../global-styles/common.scss";
 
 .wrapper {
+  width: 100%;
+  min-height: 40vh;
+
+  .banner {
     width: 100%;
-    min-height: 40vh;
+    height: 30vh;
+    background-image: url("../../assets/images/cert-page/library-922998_640.jpg");
+    background-size: cover;
+    background-position: center;
 
+    h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      color: $greyLight;
+      text-transform: uppercase;
+    }
+  }
+
+  .infoConetnt {
+    width: 90%;
+    margin: 20px auto;
+
+    h3 {
+      color: $blueNormal;
+    }
+
+    .certViev {
+      margin-top: 20px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: nowrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 200px;
+        height: 300px;
+        margin-top: 20px;
+        border: 1px solid $greyDark;
+      }
+    }
+  }
+
+  @media screen and (orientation: landscape) {
     .banner {
-        width: 100%;
-        height: 30vh;
-        background-image: url("../../assets/images/cert-page/library-922998_640.jpg");
-        background-size: cover;
-        background-position: center;
-
-        h1 {
-            background-color: rgba(0, 0, 0, 0.5);
-            text-align: center;
-            color: $greyLight;
-            text-transform: uppercase;
-        }
+      height: auto;
     }
 
     .infoConetnt {
-        width: 90%;
-        margin: 20px auto;
-
-        h3 {
-            color: $blueNormal;
-        }
-
-        .certViev {}
+      .certViev {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
     }
+  }
 
-    @media screen and (orientation: landscape) {
-        .banner {
-            height: auto;
-        }
+  @media screen and (min-width: map-get($breakpoints, small)) {
+    .banner {
+      height: 30vh;
     }
+    .infoConetnt {
+      .certViev {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+    }
+  }
 
-    @media screen and (min-width:map-get($breakpoints, small)) {
-        .banner {
-            height: 30vh;
-        }
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .banner {
+      background-image: url("../../assets/images/cert-page/library-922998_1920.jpg");
     }
-
-    @media screen and (min-width:map-get($breakpoints, large)) {
-        .banner {
-            background-image: url("../../assets/images/cert-page/library-922998_1920.jpg");
+    .infoConetnt {
+      .certViev {
+        img {
+          cursor: pointer;
         }
+      }
     }
+  }
 }
