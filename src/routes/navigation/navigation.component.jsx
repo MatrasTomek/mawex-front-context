@@ -97,6 +97,9 @@ const Navigation = () => {
           >
             Wypożyczalnia
           </Link>
+          <Link id="consultation" to="/" onClick={handleOpenCloseMenu}>
+            BEZPŁATNA KONSULTACJA
+          </Link>
         </div>
       </div>
       <Outlet />

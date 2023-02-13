@@ -45,10 +45,10 @@
   .navLinksOpen {
     display: none;
     position: absolute;
-    top: 125px;
+    top: 120px;
     left: 0;
     width: 100%;
-    height: 270px;
+    height: 330px;
     background-color: $greyDark;
     flex-direction: column;
     align-items: center;
@@ -61,6 +61,14 @@
       margin-bottom: 10px;
       color: $greyLight;
       font-weight: 700;
+    }
+
+    a:nth-last-child(1) {
+      background-color: red;
+      padding: 5px 10px;
+      border-radius: $radius;
+      color: $greyLight;
+      font-size: $sizeXXS;
     }
   }
 
@@ -145,9 +153,9 @@
 
     .navLinksClose,
     .navLinksOpen {
-        a {
-            flex-basis: 8%;
-          }
+      a {
+        flex-basis: 8%;
+      }
     }
   }
 }
