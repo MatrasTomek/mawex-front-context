@@ -30,7 +30,7 @@ const Navigation = () => {
         <Link to="/" className={styles.navLink} onClick={handleSwitchLogo}>
           <div className={styles.navLogo}>
             {!isReasrvartionPage ? (
-              <img src="images/logo_maw.png" alt="logo" />
+              <img src="images/logo_maw_1.png" alt="logo" />
             ) : (
               <img src="images/logo_wyp.png" alt="logo-wypozyczalnia" />
             )}
@@ -97,7 +97,7 @@ const Navigation = () => {
           >
             Wypożyczalnia
           </Link>
-          <Link id="consultation" to="/" onClick={handleOpenCloseMenu}>
+          <Link id="consultation" to="/offer" onClick={handleOpenCloseMenu}>
             BEZPŁATNA KONSULTACJA
           </Link>
         </div>
