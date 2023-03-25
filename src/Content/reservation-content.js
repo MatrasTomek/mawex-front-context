@@ -75,3 +75,11 @@ export const BASIC_CARS = [
     img: "/images/reservation/nissan_micra.jpg",
   },
 ];
+
+export const RESERVATION_CONTENT = [
+  "MAWEX wypożyczalnia",
+  "Firma 'MAWEX wypożyczalnia' oferuje wynajem pojazdów osobowych krótko, średnio i długoterminowy.",
+  "Adres: Ciepła 11, 32-800 Brzesko",
+  "Telefon: 793 272 000",
+  "Zapraszamy do zapoznania się z naszą ofertą.",
+];
