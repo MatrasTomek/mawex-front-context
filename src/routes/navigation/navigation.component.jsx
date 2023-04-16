@@ -92,7 +92,7 @@ const Navigation = () => {
           </Link>
           <Link
             id="reservation"
-            to="/reservation"
+            to="/wypozyczalnia"
             onClick={handleOpenCloseMenu}
           >
             Wypożyczalnia

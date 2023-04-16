@@ -48,6 +48,18 @@
       p {
         font-size: $sizeXXS;
       }
+
+      .aButton {
+        margin-bottom: 10px;
+        border: 1px solid $greyDarness;
+        border-radius: $radius;
+        padding: 10px;
+        color: $greyLight;
+        font-weight: 700;
+        font-size: $sizeXXS;
+        background-color: $greyDarness;
+        transition: $transition;
+      }
     }
   }
 
@@ -224,6 +236,15 @@
   @media screen and (min-width: map-get($breakpoints, large)) {
     .banner {
       background-image: url("../../assets/images/reservation-page/buick-classic-cars-3431909_1920.jpg");
+    }
+
+    .infoConetnt {
+      .aButton {
+        &:hover {
+          color: $greyDarness;
+          background-color: $greyLight;
+        }
+      }
     }
 
     .cars {

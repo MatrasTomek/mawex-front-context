@@ -27,7 +27,7 @@ export const BASIC_CARS = [
     drive: "RWD",
     fuel: "PB+LPG",
     hp: 297,
-    price: 290.0,
+    price: 240.0,
     img: "/images/reservation/jaguar_jxf.jpg",
   },
 
@@ -38,7 +38,7 @@ export const BASIC_CARS = [
     drive: "FWD",
     fuel: "ON",
     hp: 150,
-    price: 390.0,
+    price: 290.0,
     img: "/images/reservation/renault_master.jpg",
   },
 
@@ -49,7 +49,7 @@ export const BASIC_CARS = [
     drive: "FWD",
     fuel: "PB+LPG",
     hp: 90,
-    price: 190.0,
+    price: 180.0,
     img: "/images/reservation/dacia_duster.jpg",
   },
 
@@ -60,7 +60,7 @@ export const BASIC_CARS = [
     drive: "FWD",
     fuel: "PB+LPG",
     hp: 90,
-    price: 130.0,
+    price: 120.0,
     img: "/images/reservation/dacia_sandero.jpg",
   },
 
@@ -71,7 +71,7 @@ export const BASIC_CARS = [
     drive: "FWD",
     fuel: "PB",
     hp: 60,
-    price: 40.0,
+    price: 60.0,
     img: "/images/reservation/nissan_micra.jpg",
   },
 ];
