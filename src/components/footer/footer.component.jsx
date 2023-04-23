@@ -3,24 +3,24 @@ import { UpArrow } from "..";
 import styles from "./footer.module.scss";
 
 const Footer = () => {
+  const {
+    companyName,
+    companyAdress1,
+    companyAdress2,
+    phone,
+    mail,
+    facebook,
+    gmp,
+  } = CONTACT_INFO;
 
-    const {
-        companyName,
-        companyAdress1,
-        companyAdress2,
-        phone,
-        mail,
-        facebook,
-        gmp } = CONTACT_INFO;
-
-    return (
-        <div className={ styles.footerWrapper }>
-            <div className={ styles.inside }>
-                <div className={ styles.contact }>
-                    <p>{ companyName }</p>
-                    <p>{ companyAdress1 }</p>
-                    <p>{ companyAdress2 }</p>
-                    <a href={`tel:${phone}`}>
+  return (
+    <div className={styles.footerWrapper}>
+      <div className={styles.inside}>
+        <div className={styles.contact}>
+          <p>{companyName}</p>
+          <p>{companyAdress1}</p>
+          <p>{companyAdress2}</p>
+          <a href={`tel:${phone}`}>
             <span className={styles.phoneIcon}>
               <svg
                 width="80"
@@ -30,8 +30,8 @@ const Footer = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
                   d="M51.0923 47.379C50.6451 47.1705 50.2023 46.9543 49.7642 46.7306C47.9571 45.8079 45.6813 46.4767 44.8417 48.3239C43.686 50.8664 40.3466 51.4719 38.3718 49.4971L38.2105 49.3359L29.7253 40.8506L29.564 40.6894C27.5892 38.7146 28.1948 35.3752 30.7373 34.2195C32.4879 33.4238 33.1045 31.2538 32.1904 29.562C31.8042 28.8474 31.4384 28.1199 31.0934 27.3801C30.405 25.9039 29.8075 24.395 29.3015 22.8615C28.4673 20.3333 25.597 18.9234 23.2248 20.132L16.9733 23.3174C15.9441 23.8417 15.3055 24.9188 15.4062 26.0694C16.2534 35.7531 20.4854 44.8287 27.359 51.7022C34.2325 58.5758 43.3081 62.8078 52.9917 63.655C54.1432 63.7557 55.221 63.1167 55.7457 62.0868L59.1039 55.4959C60.3278 53.094 58.8666 50.1894 56.2924 49.3892C54.5242 48.8395 52.7867 48.1691 51.0923 47.379Z"
                   fill="#C2CCDE"
                 />
@@ -42,16 +42,16 @@ const Footer = () => {
                 <path
                   d="M44.6509 23.3467L53.7418 23.3467L55.56 23.3467L64.6509 23.3467"
                   stroke="#C2CCDE"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
                 <path
                   d="M54.6509 13.3467L54.6509 22.4376L54.6509 24.2558L54.6509 33.3467"
                   stroke="#C2CCDE"
-                  stroke-width="6"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 />
               </svg>
             </span>
@@ -74,20 +74,31 @@ const Footer = () => {
             </span>
             <span>{mail}</span>
           </a>
-
-                </div>
-                <div className={ styles.media }>
-                    <a href={ `${ gmp }` } target="blank" className={ styles.map }>
-                        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none" /><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" /></svg>
-                    </a>
-                    <a href={ `${ facebook }` } target="blank" className={ styles.face }>
-                        <img src="/images/Popular-Logo-facebook-icon-png.png" alt="Facebook logo" />
-                    </a>
-                    <UpArrow />
-                </div>
-            </div>
         </div>
-    );
+        <div className={styles.media}>
+          <a href={`${gmp}`} target="blank" className={styles.map}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="24px"
+              viewBox="0 0 24 24"
+              width="24px"
+              fill="#000000"
+            >
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+            </svg>
+          </a>
+          <a href={`${facebook}`} target="blank" className={styles.face}>
+            <img
+              src="/images/Popular-Logo-facebook-icon-png.png"
+              alt="Facebook logo"
+            />
+          </a>
+          <UpArrow />
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Footer;

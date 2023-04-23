@@ -11,7 +11,7 @@ import {
   BlogPage,
   ReservationPage,
 } from "./routes";
-import { Footer } from "./components";
+import { Footer, RodoBanner } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
 
 const App = () => {
@@ -39,6 +39,7 @@ const App = () => {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
+      <RodoBanner />
       <Footer />
     </>
   );

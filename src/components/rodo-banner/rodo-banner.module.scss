@@ -1,0 +1,84 @@
+@import "../../global-styles/common.scss";
+
+.wrapper {
+  position: fixed;
+  bottom: 1%;
+  left: 1%;
+  width: 260px;
+  height: 330px;
+  background-color: $greyDarness;
+  border-radius: $radius;
+  padding: 20px;
+  box-shadow: 10px 10px 20px darken($greyLight, 50%);
+  z-index: 100;
+
+  .inside {
+    color: $greyLight;
+
+    .content {
+      p {
+        text-align: center;
+        font-size: $sizeXXS/1.1;
+      }
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      button {
+        @include standardButton;
+        background-color: $greyLight;
+        color: $blueNormal;
+
+        &:hover {
+          color: $greyLight;
+          background-color: $blueNormal;
+        }
+      }
+    }
+
+    .links {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      a {
+        color: $greyLight;
+        transition: $transition;
+        font-size: $sizeXXS;
+
+        &:hover {
+          color: green;
+        }
+      }
+    }
+  }
+
+  @media screen and (orientation: landscape) {
+    width: 420px;
+    height: 250px;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    width: 400px;
+    height: 330px;
+
+    .inside {
+      .content {
+        p {
+          font-size: $sizeXS;
+        }
+      }
+
+      .links {
+        a {
+          font-size: $sizeXS;
+        }
+      }
+    }
+  }
+}
