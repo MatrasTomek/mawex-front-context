@@ -10,6 +10,7 @@ import {
   ContactPage,
   BlogPage,
   ReservationPage,
+  CookiePage,
 } from "./routes";
 import { Footer, RodoBanner } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/wypozyczalnia" element={<ReservationPage />} />
+          <Route path="/cookies" element={<CookiePage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

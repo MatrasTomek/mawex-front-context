@@ -46,7 +46,7 @@ const RodoBanner = () => {
           <Button name="Odrzuć" onClick={handleOnCloseRodoBanner} />
         </div>
         <div className={styles.links}>
-          <Link to="/pliki-cookie">Ciasteczka</Link>
+          <Link to="/cookies">Ciasteczka</Link>
           <a href="/klauzula.jpg" target="blank">
             Polityka Rodo
           </a>
