@@ -1,228 +1,266 @@
 @import "../../global-styles/common.scss";
 
 .formWrapper {
-    margin-top: 40px;
-    border: 1px solid $blueNormal;
-    border-radius: $radius;
-    padding: 20px;
+  margin-top: 40px;
+  border: 1px solid $blueNormal;
+  border-radius: $radius;
+  padding: 20px;
+
+  .form {
+    h4 {
+      text-align: center;
+      color: $blueNormal;
+      margin-bottom: 10px;
+    }
+
+    form {
+      .formContact {
+        width: 100%;
+        margin-top: 20px;
+
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          label {
+            flex-basis: 30%;
+            color: $greyDark;
+            font-size: $sizeXXS;
+          }
+
+          input {
+            flex-basis: 70%;
+            padding: 4px;
+            border: none;
+            border: 1px solid $greyDark;
+            border-radius: $radius;
+
+            &:hover {
+              background-color: $greyDark;
+              color: $greyLight;
+            }
+          }
+
+          span {
+            flex-basis: 100%;
+            color: red;
+            text-align: center;
+            font-weight: 700;
+            font-size: $sizeXXS;
+          }
+        }
+      }
+
+      .formChoose {
+        width: 100%;
+        margin-top: 20px;
+
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          margin-bottom: 10px;
+
+          label {
+            flex-basis: 30%;
+            color: $greyDark;
+            font-size: $sizeXXS;
+            margin-right: 20px;
+          }
+
+          select,
+          input[type="datetime-local"] {
+            flex-basis: 60%;
+            padding: 4px;
+            border: none;
+            border: 1px solid $greyDark;
+            border-radius: $radius;
+
+            &:hover {
+              background-color: $greyDark;
+              color: $greyLight;
+            }
+          }
+
+          span {
+            flex-basis: 100%;
+            color: red;
+            text-align: center;
+            font-weight: 700;
+            font-size: $sizeXXS;
+          }
+        }
+      }
+
+      .formRodo {
+        margin-top: 20px;
+
+        .agreed {
+          display: flex;
+          flex-wrap: wrap;
+
+          label {
+            color: $greyDark;
+            font-size: $sizeXXS;
+
+            .rodo {
+              margin-left: 5px;
+              margin-right: 5px;
+            }
+
+            input {
+              margin-right: 10px;
+              padding: 4px;
+              border: none;
+              border: 1px solid $greyDark;
+              border-radius: $radius;
+            }
+          }
+
+          span {
+            flex-basis: 100%;
+            color: red;
+            text-align: center;
+            font-weight: 700;
+            font-size: $sizeXXS;
+          }
+        }
+      }
+
+      .buttons {
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        button {
+          @include standardButton;
+        }
+      }
+
+      .formResponse {
+        margin-top: 10px;
+
+        p {
+          text-align: center;
+          font-weight: 700;
+          color: green;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, small)) {
+    .form {
+      form {
+        .formContact {
+          div:nth-child(3) {
+            justify-content: flex-start;
+
+            input {
+              flex-basis: 30%;
+            }
+          }
+        }
+
+        .formChoose {
+          div {
+            justify-content: flex-start;
+
+            select,
+            input[type="datetime-local"] {
+              flex-basis: 30%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, medium)) {
+    width: 80%;
+    margin: 40px auto 0 auto;
+  }
+
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    width: 80%;
+    margin: 40px auto 0 auto;
 
     .form {
-        h4 {
-            text-align: center;
-            color: $blueNormal;
-            margin-bottom: 10px;
+      form {
+        .formContact,
+        .formChoose {
+          div {
+            justify-content: flex-start;
+
+            label {
+              flex-basis: 20%;
+              font-weight: 700;
+              font-size: $sizeXS;
+            }
+
+            input {
+              flex-basis: 60%;
+              padding: 5px;
+
+              &:hover {
+                background-color: $greyLight;
+                color: $greyDark;
+              }
+            }
+
+            span {
+              flex-basis: 100%;
+              color: red;
+              text-align: center;
+              font-weight: 700;
+              font-size: $sizeXXS;
+            }
+          }
         }
 
-        form {
+        .formRodo {
+          .agreed {
+            label {
+              font-size: $sizeXS;
+              font-weight: 700;
+              display: flex;
+              align-items: center;
 
-            .formContact {
-                width: 100%;
-                margin-top: 20px;
-
-                div {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 10px;
-
-                    label {
-                        flex-basis: 30%;
-                        color: $greyDark;
-                        font-size: $sizeXXS;
-                    }
-
-                    input {
-                        flex-basis: 70%;
-                        padding: 4px;
-                        border: none;
-                        border: 1px solid $greyDark;
-                        border-radius: $radius;
-
-                        &:hover {
-                            background-color: $greyDark;
-                            color: $greyLight;
-                        }
-                    }
-
-                    span {
-                        flex-basis: 100%;
-                        color: red;
-                        text-align: center;
-                        font-weight: 700;
-                        font-size: $sizeXXS;
-                    }
+              .rodo {
+                transition: $transition;
+                &:hover {
+                  color: green;
                 }
+              }
+
+              input {
+                width: 20px;
+                height: 20px;
+              }
             }
-
-            .formChoose {
-                width: 100%;
-                margin-top: 20px;
-
-
-                div {
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    justify-content: space-between;
-                    margin-bottom: 10px;
-
-                    label {
-                        flex-basis: 30%;
-                        color: $greyDark;
-                        font-size: $sizeXXS;
-                        margin-right: 20px;
-                    }
-
-                    select,
-                    input[type="datetime-local"] {
-
-                        flex-basis: 60%;
-                        padding: 4px;
-                        border: none;
-                        border: 1px solid $greyDark;
-                        border-radius: $radius;
-
-                        &:hover {
-                            background-color: $greyDark;
-                            color: $greyLight;
-                        }
-                    }
-
-                    span {
-                        flex-basis: 100%;
-                        color: red;
-                        text-align: center;
-                        font-weight: 700;
-                        font-size: $sizeXXS;
-                    }
-                }
-            }
-
-            .buttons {
-                margin-top: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-
-                button {
-                    @include standardButton;
-                }
-            }
-
-            .formResponse {
-                margin-top: 10px;
-
-                p {
-                    text-align: center;
-                    font-weight: 700;
-                    color: green;
-                }
-
-
-            }
-        }
-    }
-
-    @media screen and (min-width:map-get($breakpoints, small)) {
-        .form {
-            form {
-                .formContact {
-                    div:nth-child(3) {
-
-                        justify-content: flex-start;
-
-                        input {
-                            flex-basis: 30%;
-                        }
-                    }
-                }
-
-                .formChoose {
-
-                    div {
-                        justify-content: flex-start;
-
-
-                        select,
-                        input[type="datetime-local"] {
-                            flex-basis: 30%;
-                        }
-                    }
-                }
-            }
+          }
         }
 
-    }
+        .buttons {
+          margin-top: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
-    @media screen and (min-width:map-get($breakpoints, medium)) {
-
-        width: 80%;
-        margin: 40px auto 0 auto;
-    }
-
-    @media screen and (min-width:map-get($breakpoints, large)) {
-
-        width: 80%;
-        margin: 40px auto 0 auto;
-
-        .form {
-
-            form {
-
-                .formContact,
-                .formChoose {
-
-                    div {
-
-                        justify-content: flex-start;
-
-                        label {
-                            flex-basis: 20%;
-                            font-weight: 700;
-                            font-size: $sizeXS;
-                        }
-
-                        input {
-                            flex-basis: 60%;
-                            padding: 5px;
-
-
-                            &:hover {
-                                background-color: $greyLight;
-                                color: $greyDark;
-                            }
-                        }
-
-
-                        span {
-                            flex-basis: 100%;
-                            color: red;
-                            text-align: center;
-                            font-weight: 700;
-                            font-size: $sizeXXS;
-                        }
-                    }
-
-                }
-
-
-                .buttons {
-                    margin-top: 30px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    button {
-                        @include standardButton;
-                    }
-                }
-
-            }
+          button {
+            @include standardButton;
+          }
         }
+      }
     }
+  }
 
-    @media screen and (min-width:map-get($breakpoints, xlarge)) {
-        width: 60%;
-    }
+  @media screen and (min-width: map-get($breakpoints, xlarge)) {
+    width: 60%;
+  }
 }

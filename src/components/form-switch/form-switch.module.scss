@@ -15,7 +15,8 @@
     }
 
     form {
-      .formOffer {
+      .formOffer,
+      .agreed {
         display: flex;
         flex-direction: column;
 
@@ -30,6 +31,13 @@
             height: 15px;
             border: none;
             cursor: pointer;
+          }
+
+          .rodo {
+            background: none;
+            border: none;
+            padding: 0;
+            color: $blueNormal;
           }
         }
       }
@@ -79,6 +87,11 @@
             font-size: $sizeXXS;
           }
         }
+      }
+
+      .agreed {
+        width: 100%;
+        margin-top: 20px;
       }
 
       .buttons {
@@ -131,7 +144,8 @@
 
     .form {
       form {
-        .formOffer {
+        .formOffer,
+        .agreed {
           label {
             font-size: $sizeS;
             display: flex;
@@ -171,6 +185,19 @@
               text-align: center;
               font-weight: 700;
               font-size: $sizeXXS;
+            }
+          }
+        }
+
+        .formRodo {
+          label {
+            display: block;
+
+            .rodo {
+              transition: $transition;
+              &:hover {
+                color: green;
+              }
             }
           }
         }
