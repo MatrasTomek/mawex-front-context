@@ -9,12 +9,15 @@ const RodoBanner = () => {
   const { isRodoAccepted, setIsRodoAccepted } = useContext(RodoContext);
 
   useEffect(() => {
-    if (document.cookie === "accessForMawex") {
+    const cookieArray = document.cookie.split("; ");
+    const cookieValue = cookieArray.find((item) => item === "accessForMawex");
+
+    if (cookieValue) {
       setIsRodoAccepted(true);
     } else {
       setIsRodoAccepted(false);
     }
-  }, [setIsRodoAccepted]);
+  }, []);
 
   const handleOnSetCookie = () => {
     setCookie();
