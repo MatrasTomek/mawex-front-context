@@ -87,7 +87,7 @@ const ContactPage = () => {
             <span>{mail}</span>
           </a>
           <p>NIP: {nip}</p>
-          <p>RREGON: {regon}</p>
+          <p>REGON: { regon }</p>
           <p>KRS: {krs}</p>
           <p>NR KONTA: {account}</p>
         </div>

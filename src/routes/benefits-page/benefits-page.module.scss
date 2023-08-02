@@ -73,12 +73,11 @@
         .infoConetnt {
             position: relative;
             margin: 40px auto;
-            height: 600px;
+
 
             .content1,
             .content2 {
                 padding: 30px;
-                position: absolute;
                 width: 60%;
 
                 ul {
@@ -89,16 +88,9 @@
                     }
                 }
             }
-
-            .content1 {
-                top: 0;
-                left: 0;
-            }
-
             .content2 {
-                top: 50%;
-                left: 70%;
-                transform: translateX(-50%);
+                margin-left: 40%;
+                margin-top: -50px;
             }
         }
     }
