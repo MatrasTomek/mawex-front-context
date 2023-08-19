@@ -1,6 +1,11 @@
 @import "../../global-styles/common.scss";
 
 .navWrapper {
+  .switchTheme {
+    position: absolute;
+    right: 60px;
+  }
+
   position: -webkit-sticky;
   /* Safari */
   position: sticky;
@@ -106,6 +111,11 @@
   }
 
   @media screen and (min-width: map-get($breakpoints, large)) {
+    .switchTheme {
+      right: 30px;
+      top: 10px;
+    }
+
     .navBurger {
       display: none;
     }
@@ -138,6 +148,7 @@
   }
 
   @media screen and (min-width: map-get($breakpoints, xlarge)) {
+
     .navLinksClose,
     .navLinksOpen {
       a {

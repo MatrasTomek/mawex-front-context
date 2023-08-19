@@ -101,6 +101,7 @@ const Navigation = () => {
             BEZPŁATNA KONSULTACJA
           </Link>
         </div>
+        <div className={ styles.switchTheme }>Switch</div>
       </div>
       <Outlet />
     </Fragment>
