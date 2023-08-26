@@ -1,0 +1,54 @@
+@import "../../global-styles/common.scss";
+
+.switchWrapper {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border: 1px solid $blueNormal;
+    border-radius: 20px;
+    background-color: $greyDarness;
+
+    .switchContent{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+
+        .dark, .light {
+            width: 50%;
+            height: 100%;
+            border-radius: 20px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+        }
+
+        .dark {
+            background-image: url('../../assets/svg/dark_mode.svg');
+            background-color: $greyLight;
+        }
+
+        .light {
+            background-image: url('../../assets/svg/light_mode.svg');
+            background-color: yellow;
+        }
+    }
+
+    .switchDot{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 50%;
+        height: 100%;
+        border-radius: 20px;
+        border: 1px solid $greyLight;
+        background-color: $greyDarness;
+        transition: $transition;
+    }
+
+    @media screen and (min-width: map-get($breakpoints, large)) {
+        cursor: pointer;
+    }
+}

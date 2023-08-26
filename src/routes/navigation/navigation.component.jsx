@@ -2,8 +2,9 @@ import { useContext, Fragment, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { DropDownMenu } from "../../routes";
 import { ReservationContext } from "../../contexts/reservation-view.context";
+import { SwitchTheme } from "../../components";
 import styles from "./navigation.module.scss";
-import { logDOM } from "@testing-library/react";
+
 
 const Navigation = () => {
   const { isReasrvartionPage, setIsReasrvartionPage } =
@@ -101,7 +102,7 @@ const Navigation = () => {
             BEZPŁATNA KONSULTACJA
           </Link>
         </div>
-        <div className={ styles.switchTheme }>Switch</div>
+        <div className={ styles.switchTheme }><SwitchTheme /></div>
       </div>
       <Outlet />
     </Fragment>
