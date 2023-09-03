@@ -3,7 +3,8 @@
 .navWrapper, .navWrapperDark {
   .switchTheme {
     position: absolute;
-    right: 60px;
+    right: 30px;
+    top: 70px
   }
 
   position: -webkit-sticky;
@@ -44,6 +45,7 @@
       width: 35px;
       fill: $blueNormal;
       margin-right: 20px;
+      margin-top: -50px;
     }
   }
 
@@ -112,8 +114,8 @@
 
   @media screen and (min-width: map-get($breakpoints, large)) {
     .switchTheme {
-      right: 10px;
-      top: 35px;
+      right: 1%;
+      top: 38px;
     }
 
     .navBurger {
