@@ -1,3 +1,4 @@
+import {useContext} from 'react';
 import { Routes, Route, Navigate } from "react-router-dom";
 import {
   Navigation,
@@ -14,8 +15,13 @@ import {
 } from "./routes";
 import { Footer, RodoBanner } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
+import {DarkModeContext} from "./contexts/dark-mode.context"
+
+import styles from "./app.module.scss";
 
 const App = () => {
+
+  const { isDarkModeActive } = useContext(DarkModeContext);
   const offerSubRoutes = OFFERS_NAMES.map((item) => (
     <Route
       key={item.id}
@@ -25,7 +31,7 @@ const App = () => {
   ));
 
   return (
-    <>
+    <div className={ `${ !isDarkModeActive ? "" : styles.wrapperDark }` }>
       <Routes>
         <Route path="/" element={<Navigation />}>
           <Route index element={<Home />} />
@@ -43,7 +49,7 @@ const App = () => {
       </Routes>
       <RodoBanner />
       <Footer />
-    </>
+    </div>
   );
 };
 

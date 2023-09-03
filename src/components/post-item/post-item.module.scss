@@ -1,6 +1,7 @@
 @import "../../global-styles/common.scss";
 
-.postWrapper {
+.postWrapper,
+.postWrapperDark {
     width: 100%;
     margin-bottom: 30px;
 
@@ -130,6 +131,54 @@
 
             img {
                 height: 180px;
+            }
+        }
+    }
+}
+
+.postWrapperDark {
+    .inside {
+        border: 1px solid $greyDark;
+
+        .contents {
+
+            h4,
+            p {
+                color: $lightLetters;
+            }
+
+            ;
+
+            a {
+                color: $linksDark;
+            }
+
+            button {
+                @include smallButton;
+            }
+        }
+
+        .signature {
+            p {
+                color: $lightLetters;
+            }
+        }
+    }
+
+    @media screen and (min-width:map-get($breakpoints, large)) {
+
+
+        .inside {
+            .contents {
+
+                a {
+                    transition: $transition;
+
+                    &:hover {
+                        color: $linksDarkHover;
+                    }
+
+                }
             }
         }
     }

@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.wrapper {
+.wrapper, .wrapperDark {
     @include wrapper;
     margin-bottom: 40px;
 
@@ -387,5 +387,17 @@
 
             }
         }
+    }
+}
+
+.wrapperDark {
+    h1 {
+        color: $lightLetters;
+    }
+
+    .offerSection {
+    h3 {
+        color: $lightLetters;
+    }
     }
 }

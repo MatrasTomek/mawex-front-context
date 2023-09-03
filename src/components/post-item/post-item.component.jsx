@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../../components";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./post-item.module.scss";
 
 const PostItem = React.memo(({ postItem, homePage }) => {
+
+  const { isDarkModeActive } = useContext(DarkModeContext);
+
   const { title, content1, content2, date, imgPath, link, userName } = postItem;
 
   const [isTextShow, setIsTextShow] = useState(false);
@@ -23,7 +27,7 @@ const PostItem = React.memo(({ postItem, homePage }) => {
     : sortedContent2.map((item, index) => <p key={index}>{item}</p>);
 
   return (
-    <div className={styles.postWrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.postWrapper : styles.postWrapperDark }` }>
       <div className={styles.inside}>
         <img
           src={`https://www.testy.developerweb.pl/${imgPath}`}

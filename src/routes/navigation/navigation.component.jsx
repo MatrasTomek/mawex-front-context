@@ -2,6 +2,7 @@ import { useContext, Fragment, useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { DropDownMenu } from "../../routes";
 import { ReservationContext } from "../../contexts/reservation-view.context";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import { SwitchTheme } from "../../components";
 import styles from "./navigation.module.scss";
 
@@ -9,6 +10,9 @@ import styles from "./navigation.module.scss";
 const Navigation = () => {
   const { isReasrvartionPage, setIsReasrvartionPage } =
     useContext(ReservationContext);
+
+  const { isDarkModeActive } =
+    useContext(DarkModeContext);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -27,7 +31,7 @@ const Navigation = () => {
 
   return (
     <Fragment>
-      <div className={styles.navWrapper}>
+      <div className={ `${ !isDarkModeActive ? styles.navWrapper : styles.navWrapperDark }` }>
         <Link to="/" className={styles.navLink} onClick={handleSwitchLogo}>
           <div className={styles.navLogo}>
             {!isReasrvartionPage ? (

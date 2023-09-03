@@ -25,4 +25,13 @@ $breakpoints :(xSmall: 480px,
     medium: 800px,
     large: 1040px,
     xlarge: 1280px,
-)
+);
+
+//darkMode
+
+$darkBackg: rgb(20, 20, 20);
+$lightIcon: #f8f8f8;
+$lightLetters: #d6d6d6;
+$lightLettersHover: rgb(67, 67, 229);
+$linksDark:  rgb(115, 115, 230);
+$linksDarkHover: #2c9dc3;

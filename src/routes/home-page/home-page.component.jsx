@@ -4,9 +4,12 @@ import { BannerSlider, Button, PostItem, MinPostItem, Spinner } from "../../comp
 import { firstSection, offerSection } from "../../content/homepage-content";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
 import { ReservationContext } from "../../contexts/reservation-view.context";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./home-page.module.scss";
 
 const Home = () => {
+
+    const { isDarkModeActive } = useContext(DarkModeContext);
 
     const { bigTitle, title1, title2, title3, content1, content2, content3 } = firstSection;
 
@@ -68,7 +71,7 @@ const Home = () => {
     return (
         <>
             <BannerSlider />
-            <div className={ styles.wrapper }>
+            <div className={ `${ !isDarkModeActive ? styles.wrapper : styles.wrapperDark }` }>
 
                 <h1>{ bigTitle }</h1>
                 <div className={ styles.infoSection }>

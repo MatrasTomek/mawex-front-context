@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.navWrapper {
+.navWrapper, .navWrapperDark {
   .switchTheme {
     position: absolute;
     right: 60px;
@@ -153,6 +153,31 @@
     .navLinksOpen {
       a {
         flex-basis: 8%;
+      }
+    }
+  }
+}
+
+
+.navWrapperDark {
+  background-color: $darkBackg;
+
+  .navBurger {
+    svg {
+      fill: $lightIcon;
+
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .navLinksClose,
+    .navLinksOpen {
+      a {
+        color: $lightLetters;
+
+        &:hover {
+          color: $lightLettersHover;
+        }
       }
     }
   }
