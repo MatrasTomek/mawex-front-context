@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./switch-theme.module.scss";
 
 const SwitchTheme = () => {
-    const [darkThemeOff, setDarkThemeOff] = useState(true);
+
+    const { isDarkModeActive, setDarkModeActive } =
+        useContext(DarkModeContext);
 
     const handleChangeTheme = () => {
-        setDarkThemeOff(!darkThemeOff);
+        setDarkModeActive(!isDarkModeActive);
     };
 
     return (
@@ -14,7 +17,7 @@ const SwitchTheme = () => {
                 <div className={ styles.dark }></div>
                 <div className={ styles.light }></div>
             </div>
-            <div className={ styles.switchDot } style={ { left: `${ !darkThemeOff ? "50%" : "0" }` } }></div>
+            <div className={ styles.switchDot } style={ { left: `${ !isDarkModeActive ? "50%" : "0" }` } }></div>
         </div>
     );
 };

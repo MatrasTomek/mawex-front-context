@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import { PostsProvider } from "./contexts/blog-items.context";
 import { ReservationProvider } from "./contexts/reservation-view.context";
 import { RodoProvider } from "./contexts/rodo-banner.context";
+import { DarkModeProvider } from "./contexts/dark-mode.context";
 import App from "./App";
 import "./global-styles/index.scss";
 import reportWebVitals from "./reportWebVitals";
@@ -12,6 +13,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <DarkModeProvider>
       <RodoProvider>
         <ReservationProvider>
           <PostsProvider>
@@ -19,6 +21,7 @@ root.render(
           </PostsProvider>
         </ReservationProvider>
       </RodoProvider>
+      </DarkModeProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
