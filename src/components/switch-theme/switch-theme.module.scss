@@ -49,6 +49,24 @@
     }
 
     @media screen and (min-width: map-get($breakpoints, large)) {
+        width: 25px;
+        height: 50px;
         cursor: pointer;
+
+        .switchContent{
+            flex-direction: column;
+
+            .dark, .light {
+                width: 100%;
+                height: 50%;
+            }
+        }
+
+        .switchDot{
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 50%;
+        }
     }
 }
