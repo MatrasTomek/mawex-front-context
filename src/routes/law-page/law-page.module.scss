@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.wrapper {
+.wrapper, .wrapperDark {
     width: 100%;
     min-height: 40vh;
 
@@ -89,5 +89,27 @@
 
 
         }
+    }
+}
+
+.wrapperDark {
+    .infoConetnt {
+        .content1,
+        .content2,
+        .content3 {
+
+            h3 {
+                color: $lightLetters;
+            }
+
+            ul {
+
+                a {
+                   color: $linksDarkHover;
+                }
+            }
+        }
+
+
     }
 }

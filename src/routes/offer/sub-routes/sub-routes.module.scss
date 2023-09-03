@@ -2,7 +2,7 @@
 
 
 
-.wrapper {
+.wrapper, .wrapperDark {
     min-height: 70vh;
 
     .image {
@@ -72,8 +72,6 @@
         }
     }
 
-
-
     @media screen and (orientation:landscape) {
         .image {
             height: 30vh;
@@ -125,6 +123,34 @@
 
 
         }
+    }
+
+}
+
+.wrapperDark {
+    .content {
+        .boxOne,
+        .boxTwo,
+        .boxThree,
+        .boxFour {
+            border: 1px solid $linksDarkHover;
+
+            h3 {
+                color: $linksDarkHover;
+            }
+
+            p {
+                color: $lightLetters;
+
+            }
+        }
+
+        .boxOne {
+            background-color: $greyDark;
+            border-color: $greyDark;
+
+        }
+
     }
 
 }

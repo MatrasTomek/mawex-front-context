@@ -1,12 +1,15 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FormReservation, ItemViev } from "../../components";
 import {
   BASIC_CARS,
   RESERVATION_CONTENT,
 } from "../../content/reservation-content";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./reservation-page.module.scss";
 
 const ReservationPage = () => {
+  const { isDarkModeActive } = useContext(DarkModeContext);
+
   const [modalOpen, setModalOpen] = useState(false);
   const [pictureName, setPictureName] = useState("");
 
@@ -40,7 +43,7 @@ const ReservationPage = () => {
   ));
 
   return (
-    <div className={styles.wrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.wrapper : styles.wrapperDark }` }>
       <div className={styles.banner}>
         <h1>Wypożyczalnia</h1>
       </div>

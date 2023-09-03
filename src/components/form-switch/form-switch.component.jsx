@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Field } from "react-final-form";
 import { Button } from "../../components";
 import { OFFERS_NAMES } from "../../content/offer-content";
 import { sendQuoteMail, sendInfoMail } from "../../utils/mails.utils";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./form-switch.module.scss";
 
 const required = (value) => (value ? undefined : "Wymagane");
 
+
 const FormSwitch = ({ isContactForm }) => {
+  const { isDarkModeActive } = useContext(DarkModeContext);
+
   const [mailResInfo, setMeilResInfo] = useState(null);
 
   const onSubmit = async (values) => {
@@ -35,7 +39,7 @@ const FormSwitch = ({ isContactForm }) => {
       ));
 
   return (
-    <div className={styles.formWrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.formWrapper : styles.formWrapperDark }` }>
       <div className={styles.form}>
         <h4>
           {isContactForm

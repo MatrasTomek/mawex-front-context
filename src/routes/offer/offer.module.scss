@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.wrapper {
+.wrapper, .wrapperDark {
   @include wrapper;
   margin-bottom: 40px;
 
@@ -104,6 +104,30 @@
           width: 45%;
           font-size: $sizeS;
         }
+      }
+    }
+  }
+}
+
+.wrapperDark {
+  h2 {
+    color: $lightLetters;
+  }
+  a {
+    border: 1px solid $greyLight;
+    color: $greyLight;
+    background-color: $linksDarkHover;
+
+  }
+
+  .info {
+    h3 {
+      color: $lightLetters;
+    }
+
+    ul {
+      a {
+        background-color: $linksDarkHover;
       }
     }
   }

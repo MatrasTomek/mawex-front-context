@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.formWrapper {
+.formWrapper, .formWrapperDark {
   margin-top: 40px;
   border: 1px solid $blueNormal;
   border-radius: $radius;
@@ -262,5 +262,58 @@
 
   @media screen and (min-width: map-get($breakpoints, xlarge)) {
     width: 60%;
+  }
+}
+
+.formWrapperDark {
+  border: none;
+  box-shadow: 10px 10px 20px #8acee5;
+
+  .form {
+    h4 {
+      color: $lightLetters;
+    }
+
+    form {
+      .formContact {
+        width: 100%;
+        margin-top: 20px;
+
+        div {
+          label {
+            color: $lightLetters;
+
+          }
+
+        }
+      }
+
+      .formChoose {
+        div {
+          label {
+
+            color: $lightLetters;
+
+          }
+
+        }
+      }
+
+      .formRodo {
+
+        .agreed {
+
+          label {
+            color: $lightLetters;
+
+            a {
+              color: $linksDarkHover;
+            }
+          }
+
+        }
+      }
+
+    }
   }
 }

@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.switchWrapper {
+.switchWrapper, .switchWrapperDark {
     position: relative;
     width: 50px;
     height: 25px;
@@ -69,4 +69,9 @@
             height: 50%;
         }
     }
+}
+
+.switchWrapperDark {
+    border: 1px solid $greyLight;
+    background-color: $greyLight;
 }

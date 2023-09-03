@@ -1,9 +1,10 @@
-
+import { useContext } from "react";
 import { LAW_CONETNT } from "../../content/law-content";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./law-page.module.scss";
 
 const LawPage = () => {
-
+    const { isDarkModeActive } = useContext(DarkModeContext);
     const contentLinks1 = LAW_CONETNT[0].links.map((item) => (
         <a target="blank" key={ item.id } href={ `${ item.path }` }>{ item.name }</a>
     ));
@@ -17,7 +18,7 @@ const LawPage = () => {
     ));
 
     return (
-        <div className={ styles.wrapper }>
+        <div className={ `${ !isDarkModeActive ? styles.wrapper : styles.wrapperDark }` }>
             <div className={ styles.banner }>
                 <h1>Prawo</h1>
             </div>

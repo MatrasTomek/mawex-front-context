@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.wrapper {
+.wrapper, .wrapperDark {
   width: 100%;
   min-height: 40vh;
 
@@ -289,6 +289,74 @@
           h3 {
             font-size: $sizeL;
           }
+        }
+      }
+    }
+  }
+}
+.wrapperDark {
+  .infoConetnt {
+    .content1,
+    .content2 {
+      h3 {
+        color: $lightLetters;
+      }
+
+      ul {
+
+        li {
+       color: $linksDarkHover;
+        }
+      }
+
+      .aButton {
+        border: 1px solid $linksDark;
+        color: $lightLetters;
+        background-color: $linksDark;
+
+      }
+    }
+  }
+
+  .cars {
+    .car {
+      border: 1px solid $linksDarkHover;
+      background-color: $linksDarkHover;
+
+      .carInfo {
+        p {
+
+          color: $greyLight;
+
+          span {
+            background-color: $greyLight;
+
+          }
+        }
+
+        p:nth-last-child(1) {
+
+          color: $lightLetters;
+          background-color: $darkBackg;
+
+        }
+      }
+    }
+  }
+
+  .reservation {
+
+    h3 {
+     color: $lightLetters;
+    }
+  }
+
+  @media screen and (min-width: map-get($breakpoints, large)) {
+    .infoConetnt {
+      .aButton {
+        &:hover {
+          color: $greyDarness;
+          background-color: $greyLight;
         }
       }
     }

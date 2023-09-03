@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Field } from "react-final-form";
 import { Button } from "..";
 import { sendReservationMail } from "../../utils/mails.utils";
 import { BASIC_CARS } from "../../content/reservation-content";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./form-reservation.module.scss";
 
 const required = (value) => (value ? undefined : "Wymagane");
 
+
 const FormReservation = () => {
+  const { isDarkModeActive } = useContext(DarkModeContext);
+
   const [mailResInfo, setMeilResInfo] = useState(null);
 
   const onSubmit = async (values) => {
@@ -22,7 +26,7 @@ const FormReservation = () => {
   ));
 
   return (
-    <div className={styles.formWrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.formWrapper : styles.formWrapperDark }` }>
       <div className={styles.form}>
         <Form
           onSubmit={onSubmit}

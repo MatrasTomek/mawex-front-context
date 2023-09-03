@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Modal } from "../../components";
 import { CERTYFICATIONS } from "../../content/cert-content";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./cert-page.module.scss";
 
 const CertPage = () => {
+
+  const { isDarkModeActive } = useContext(DarkModeContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleShowBigPhoto = (e) => {
@@ -22,7 +25,7 @@ const CertPage = () => {
   ));
 
   return (
-    <div className={styles.wrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.wrapper : styles.wrapperDark }` }>
       <div className={styles.banner}>
         <h1>Certyfikaty</h1>
       </div>
