@@ -164,6 +164,18 @@
 .navWrapperDark {
   background-color: $darkBackg;
 
+  .navLink {
+
+    .navLogo {
+
+
+      img {
+
+        filter: invert(100%);
+      }
+    }
+  }
+
   .navBurger {
     svg {
       fill: $lightIcon;
