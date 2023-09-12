@@ -1,14 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { DarkModeContext } from "../../contexts/dark-mode.context";
+import { setTheme } from '../../utils/theme.utils';
 import styles from "./switch-theme.module.scss";
 
 const SwitchTheme = () => {
-
     const { isDarkModeActive, setDarkModeActive } =
-        useContext(DarkModeContext);
+    useContext(DarkModeContext);
+
+
+
+
+
 
     const handleChangeTheme = () => {
         setDarkModeActive(!isDarkModeActive);
+        setTheme(isDarkModeActive)
     };
 
     return (
