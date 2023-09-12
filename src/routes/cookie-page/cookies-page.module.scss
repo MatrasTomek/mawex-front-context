@@ -1,5 +1,5 @@
 @import "../../global-styles/common.scss";
-.wrapper {
+.wrapper, .wrapperDark {
   @include wrapper;
   margin-top: 30px;
 
@@ -63,5 +63,13 @@
         font-size: $sizeS;
       }
     }
+  }
+}
+
+.wrapperDark {
+  color: white;
+
+  a {
+    color: $linksDarkHover;
   }
 }

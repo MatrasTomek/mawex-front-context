@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./cookies-page.module.scss";
 
 const CookiePage = () => {
+
+  const { isDarkModeActive } = useContext(DarkModeContext);
+
   return (
-    <div className={styles.wrapper}>
+    <div className={ `${ !isDarkModeActive ? styles.wrapper : styles.wrapperDark }` }>
       <div className={styles.inside}>
         <h1> Polityka dotycząca cookies </h1>
         <p>

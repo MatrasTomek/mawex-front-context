@@ -1,6 +1,6 @@
 @import "../../global-styles/common.scss";
 
-.blogWrapper {
+.blogWrapper, .blogWrapperDark {
     width: 80%;
     margin: 30px auto;
     min-height: 60vh;
@@ -21,5 +21,13 @@
 
     @media screen and (min-width:map-get($breakpoints, xlarge)) {
         width: 75%;
+    }
+}
+
+.blogWrapperDark {
+    .spinner {
+        h4 {
+            color: white;
+        }
     }
 }
