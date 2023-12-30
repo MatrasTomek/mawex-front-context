@@ -12,14 +12,16 @@ const BlogPage = () => {
     const posts = useContext(BlogItemsContext);
     const postsViev = !posts.data ? "" : (
         posts.data.map((item) => (
-            <PostItem key={ item._id } postItem={ item } homePage={ false } />
+            <PostItem key={ item._id } postItem={ item } homePage={ false } dataSource="cloud"/>
         )).reverse()
     );
 
 
     return (
         <div  className={ `${ !isDarkModeActive ? styles.blogWrapper : styles.blogWrapperDark }` }>
-            { !posts.data ? (
+
+        <div className={styles.postsWrapper}>
+        { !posts.data ? (
                 <div className={ styles.spinner }>
                     <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
                     <Spinner isOpen={ !posts.data ? false : true } />
@@ -27,12 +29,14 @@ const BlogPage = () => {
             ) : (
                 postsViev
             ) }
-            <div className={styles.oldBlogWrapper}>
+        </div>
+
+                <div className={styles.oldBlogWrapper}>
                 <h1>Poprzednie lata</h1>
                 <Link id="blog2023" to="/blog-2023" >
             Rok 2023
           </Link>
-            </div>
+          </div>
         </div>
     );
 

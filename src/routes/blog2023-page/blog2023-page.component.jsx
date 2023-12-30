@@ -16,14 +16,15 @@ const Blog2023Page = () => {
 
       const postsView = !posts ? "" : (
         posts.data.map((item) => (
-          <PostItem key={item._id} postItem={item} homePage={false} />
+          <PostItem key={item._id} postItem={item} homePage={false} dataSource="blog2023"/>
         )).reverse()
       );
 
     return (
         <div  className={ `${ !isDarkModeActive ? styles.blogWrapper : styles.blogWrapperDark }` }>
             <h2>Wiadomości w 2023 roku</h2>
-            { !postsView ? (
+          <div className={styles.postsWrapper}>
+          { !postsView ? (
                 <div className={ styles.spinner }>
                     <h4>Poczekaj na załadowanie elementów Blog-a...</h4>
                     <Spinner isOpen={ !posts.data ? false : true } />
@@ -31,6 +32,7 @@ const Blog2023Page = () => {
             ) : (
                 postsView
             ) }
+          </div>
         </div>
     );
 
