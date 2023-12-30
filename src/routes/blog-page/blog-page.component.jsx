@@ -1,8 +1,10 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { BlogItemsContext } from "../../contexts/blog-items.context";
 import { PostItem, Spinner } from "../../components";
 import { DarkModeContext } from "../../contexts/dark-mode.context";
 import styles from "./blog-page.module.scss";
+
 
 const BlogPage = () => {
 
@@ -14,6 +16,7 @@ const BlogPage = () => {
         )).reverse()
     );
 
+
     return (
         <div  className={ `${ !isDarkModeActive ? styles.blogWrapper : styles.blogWrapperDark }` }>
             { !posts.data ? (
@@ -24,6 +27,12 @@ const BlogPage = () => {
             ) : (
                 postsViev
             ) }
+            <div className={styles.oldBlogWrapper}>
+                <h1>Poprzednie lata</h1>
+                <Link id="blog2023" to="/blog-2023" >
+            Rok 2023
+          </Link>
+            </div>
         </div>
     );
 

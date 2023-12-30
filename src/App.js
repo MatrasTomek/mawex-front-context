@@ -10,6 +10,7 @@ import {
   LawPage,
   ContactPage,
   BlogPage,
+  Blog2023Page,
   ReservationPage,
   CookiePage,
 } from "./routes";
@@ -44,6 +45,7 @@ const App = () => {
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/wypozyczalnia" element={<ReservationPage />} />
           <Route path="/cookies" element={<CookiePage />} />
+          <Route path="/blog-2023" element={<Blog2023Page />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
