@@ -61,7 +61,7 @@ const Home = () => {
             <Spinner isOpen={ !posts.data ? false : true } />
         </div>
     ) : (
-        firstThreePosts.map((item) => (<PostItem key={ item._id } postItem={ item } homePage={ true } />))
+        firstThreePosts.map((item) => (<PostItem key={ item._id } postItem={ item } homePage={ true } dataSource="cloud"/>))
     );
 
     const anotherThreePostsViev = !posts.data ? ("") : (
