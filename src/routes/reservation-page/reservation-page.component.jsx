@@ -22,7 +22,7 @@ const ReservationPage = () => {
     <div key={item.id} className={styles.car}>
       <img src={`${item.img}`} alt={`${item.name}`} id={item.img} />
       <div className={styles.carInfo}>
-        <h3>{item.name}</h3>
+        <h3>{item.name} | {item.year}</h3>
         <p className={styles.fuel}>
           <span></span> {item.fuel}
         </p>
