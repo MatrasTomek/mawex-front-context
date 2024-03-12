@@ -241,6 +241,10 @@
       }
 
       @media screen and (min-width: map-get($breakpoints, xlarge)) {
-        width: 50%;
+        width: 70%;
+       }
+
+       @media screen and (min-width: 1600px) {
+        width: 55%;
        }
 }
