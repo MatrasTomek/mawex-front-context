@@ -13,7 +13,6 @@ import {
   Blog2023Page,
   ReservationPage,
   CookiePage,
-  ElectionsPage
 } from "./routes";
 import { Footer, RodoBanner } from "./components";
 import { OFFERS_NAMES } from "./content/offer-content";
@@ -49,7 +48,6 @@ const App = () => {
           <Route path="/blog-2023" element={<Blog2023Page />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-      <Route path="/wybory-2024" element={<ElectionsPage />} />
       </Routes>
       <RodoBanner />
       <Footer />
