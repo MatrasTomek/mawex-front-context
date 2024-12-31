@@ -11,6 +11,7 @@ import {
   ContactPage,
   BlogPage,
   Blog2023Page,
+  Blog2024Page,
   ReservationPage,
   CookiePage,
 } from "./routes";
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/wypozyczalnia" element={<ReservationPage />} />
           <Route path="/cookies" element={<CookiePage />} />
           <Route path="/blog-2023" element={<Blog2023Page />} />
+          <Route path="/blog-2024" element={<Blog2024Page />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>

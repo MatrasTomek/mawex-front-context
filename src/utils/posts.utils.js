@@ -13,7 +13,7 @@ export const getAllPosts = async () => {
 	} else {
 		return {
 			status: status,
-			message: "Przepraszamy błąd po stronie serwera, posty nie mąga być na razie załadowane.",
+			message: "Przepraszamy błąd po stronie serwera, posty nie mogą być na razie załadowane.",
 		};
 	}
 };

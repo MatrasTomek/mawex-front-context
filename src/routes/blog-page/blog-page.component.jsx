@@ -33,6 +33,9 @@ const BlogPage = () => {
 
                 <div className={styles.oldBlogWrapper}>
                 <h1>Poprzednie lata</h1>
+                <Link id="blog2024" to="/blog-2024" >
+            Rok 2024
+          </Link>
                 <Link id="blog2023" to="/blog-2023" >
             Rok 2023
           </Link>
