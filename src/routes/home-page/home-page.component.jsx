@@ -18,7 +18,6 @@ const Home = () => {
     const [isBox3Open, setIsBox3Open] = useState(false);
 
     const posts = useContext(BlogItemsContext);
-    const {isReasrvartionPage, setIsReasrvartionPage} = useContext(ReservationContext)
 
     const [index, setIndex] = useState(0);
     const handleIndexChanger = (e) => {

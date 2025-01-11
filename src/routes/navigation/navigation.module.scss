@@ -19,8 +19,9 @@
   background-color: white;
 
   .navLink {
-    width: 175px;
-    height: 125px;
+    width: 210px;
+    height: auto;
+    object-fit: cover;
 
     .navLogo {
       width: 100%;

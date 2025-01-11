@@ -1,6 +1,5 @@
 import { useContext, Fragment, useState } from "react";
-import { Outlet, Link } from "react-router-dom";
-import { DropDownMenu } from "../../routes";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import { ReservationContext } from "../../contexts/reservation-view.context";
 import { DarkModeContext } from "../../contexts/dark-mode.context";
 import { SwitchTheme } from "../../components";
@@ -15,6 +14,8 @@ const Navigation = () => {
     useContext(DarkModeContext);
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const location = useLocation();
 
   const handleOpenCloseMenu = (e) => {
     setIsMenuOpen(!isMenuOpen);
@@ -34,11 +35,13 @@ const Navigation = () => {
       <div className={ `${ !isDarkModeActive ? styles.navWrapper : styles.navWrapperDark }` }>
         <Link to="/" className={styles.navLink} onClick={handleSwitchLogo}>
           <div className={styles.navLogo}>
-            {!isReasrvartionPage ? (
-              <img src="images/logo_maw.png" alt="logo" />
+            {isReasrvartionPage || location.pathname === '/wypozyczalnia' ? (
+             <img src="images/logo_wyp.png" alt="logo-wypozyczalnia" />
             ) : (
-              <img src="images/logo_wyp.png" alt="logo-wypozyczalnia" />
+
+              <img src="images/logo_maw.png" alt="logo" />
             )}
+
           </div>
         </Link>
         <div className={styles.navBurger} onClick={handleOpenCloseMenu}>
