@@ -20,10 +20,12 @@ const AccountPage = () => {
 			</div>
 			<div className={styles.infoConetnt}>
 				<h1>Dlaczego warto nam zaufać?</h1>
-				<div className={styles.siteTitle}></div>
 				<div className={styles.siteContent}>{accountItems}</div>
-				<div className={styles.siteContent}>{accountItems}</div>
-				<a href="/contact">Skontaktuj się już dziś!</a>
+				<div className={styles.linkButtonWrapper}>
+					<a className={styles.linkButton} href="/contact">
+						Skontaktuj się już dziś!
+					</a>
+				</div>
 			</div>
 		</div>
 	);

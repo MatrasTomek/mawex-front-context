@@ -29,7 +29,7 @@ const Navigation = () => {
 
 	const logoSrc = (() => {
 		if (isReasrvartionPage || location.pathname === '/wypozyczalnia') {
-			return 'images/logo_wyp.png';
+			return 'images/logo_wyp.jpg';
 		}
 		if (location.pathname === '/ksiegowosc') {
 			return 'images/logo_ksi.jpg';
@@ -37,7 +37,7 @@ const Navigation = () => {
 		if (location.pathname === '/tachografy') {
 			return 'images/logo_tach.jpg';
 		}
-		return 'images/logo_maw.png';
+		return 'images/logo_maw.jpg';
 	})();
 
 	return (

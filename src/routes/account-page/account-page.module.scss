@@ -23,6 +23,31 @@
 	.infoConetnt {
 		width: 90%;
 		margin: 20px auto;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+			color: $blueNormal;
+		}
+
+		.siteContent {
+			div {
+				padding: 1rem;
+				margin-bottom: 1rem;
+				border-radius: $radius;
+				background-color: $lightLettersHover;
+				color: $lightIcon;
+				box-shadow: 10px 10px 20px $lightLettersHover;
+
+				h3 {
+					text-align: right;
+					margin-bottom: 1rem;
+				}
+
+				p {
+				}
+			}
+		}
 	}
 
 	@media screen and (orientation: landscape) {
@@ -41,14 +66,29 @@
 		.banner {
 			background-image: url('../../assets/images/account-page/pen-8619484_1920.jpg');
 		}
-	}
 
-	@media screen and (min-width: map-get($breakpoints, xlarge)) {
 		.infoConetnt {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			align-items: center;
+			.siteContent {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+
+				div {
+					flex-basis: 45%;
+					padding: 2rem;
+					min-height: 380px;
+					margin-bottom: 2rem;
+
+					h3 {
+						font-size: $sizeL;
+					}
+
+					p {
+						font-size: $sizeS;
+					}
+				}
+			}
 		}
 	}
 }

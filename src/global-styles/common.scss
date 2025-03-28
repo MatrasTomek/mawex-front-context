@@ -1,2 +1,31 @@
-@import "./variables.scss";
-@import "./mixins.scss";
+@import './variables.scss';
+@import './mixins.scss';
+
+.linkButtonWrapper {
+	width: 100%;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	.linkButton {
+		padding: 0.5rem;
+		border-radius: $radius;
+		background-color: $linksDarkHover;
+		text-decoration: none;
+		color: $black;
+	}
+}
+
+@media screen and (min-width: map-get($breakpoints, large)) {
+	.linkButton {
+		cursor: pointer;
+		transition: $transition;
+
+		&:hover {
+			background-color: $blueNormal;
+			color: #fefefe;
+		}
+	}
+}
