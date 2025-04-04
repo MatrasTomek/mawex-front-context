@@ -23,11 +23,97 @@
 	.infoConetnt {
 		width: 90%;
 		margin: 20px auto;
+
+		h1 {
+			text-align: center;
+			margin-bottom: 2rem;
+			color: $blueNormal;
+			font-size: $sizeL;
+		}
+
+		.imageTop {
+			background-image: url('../../assets/images/tacho-service-page/vdo.jpg');
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 250px;
+		}
+
+		h2 {
+			text-align: center;
+			margin-bottom: 2rem;
+			color: $blueNormal;
+			font-size: $sizeS;
+		}
+
+		.siteContent {
+			&__service,
+			&__info {
+				border: 1px solid $blueNormal;
+				border-radius: $bigRadius;
+				margin-bottom: 2rem;
+				.image {
+					background-size: cover;
+					background-repeat: no-repeat;
+					width: 100%;
+					height: 200px;
+					border-top-left-radius: $bigRadius;
+					border-top-right-radius: $bigRadius;
+					position: relative;
+
+					span {
+						position: absolute;
+						padding: 1rem;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 100%;
+						text-align: center;
+						font-size: $sizeL;
+						background-color: rgb(20, 20, 20, 0.8);
+						color: white;
+					}
+				}
+				ul {
+					padding: 1rem 1rem 1rem 2rem;
+					li {
+						list-style: square;
+					}
+				}
+			}
+
+			&__service {
+				.image {
+					background-image: url('../../assets/images/tacho-service-page/tacho-service.jpg');
+				}
+			}
+			&__info {
+				.image {
+					background-image: url('../../assets/images/tacho-service-page/service-woman.jpg');
+				}
+			}
+		}
+
+		.linkButtonWrapper {
+			flex-direction: column;
+
+			h3 {
+				text-align: center;
+				margin-bottom: 2rem;
+				color: $blueNormal;
+				font-size: $sizeXS;
+			}
+		}
 	}
 
 	@media screen and (orientation: landscape) {
 		.banner {
 			height: auto;
+		}
+
+		.infoConetnt {
+			.imageTop {
+				height: 390px;
+			}
 		}
 	}
 
@@ -35,11 +121,27 @@
 		.banner {
 			height: 30vh;
 		}
+
+		.infoConetnt {
+			.imageTop {
+				width: 70%;
+				margin: auto;
+				height: 300px;
+			}
+		}
 	}
 
 	@media screen and (min-width: map-get($breakpoints, large)) {
 		.banner {
 			background-image: url('../../assets/images/account-page/pen-8619484_1920.jpg');
+		}
+
+		.infoConetnt {
+			.imageTop {
+				width: 60%;
+				margin: auto;
+				height: 350px;
+			}
 		}
 	}
 
@@ -49,6 +151,68 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 			align-items: center;
+
+			.imageTop {
+				width: 350px;
+				margin: auto;
+				height: 240px;
+			}
+
+			h1 {
+				font-size: $sizeXXL;
+			}
+
+			h2 {
+				font-size: $sizeL;
+			}
+
+			.siteContent {
+				width: 100%;
+				margin-top: 2rem;
+
+				&__service,
+				&__info {
+					display: flex;
+
+					.image {
+						width: 700px;
+						height: 330px;
+						border-bottom-left-radius: $bigRadius;
+						border-top-right-radius: 0;
+
+						span {
+							font-size: $sizeXXL;
+						}
+					}
+
+					ul {
+						li {
+							list-style: square;
+							font-size: $sizeM;
+							margin-bottom: 1rem;
+						}
+					}
+				}
+
+				&__service {
+					width: 70% !important;
+				}
+
+				&__info {
+					flex-direction: row-reverse;
+					justify-content: space-between;
+					width: 70% !important;
+					margin-left: 30%;
+
+					.image {
+						width: 500px;
+						border-bottom-left-radius: 0;
+						border-top-left-radius: 0;
+						border-bottom-right-radius: $bigRadius;
+						border-top-right-radius: $bigRadius;
+					}
+				}
+			}
 		}
 	}
 }
