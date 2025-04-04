@@ -95,17 +95,13 @@
 
 .wrapperDark {
 	.infoConetnt {
-		.content1,
-		.content2,
-		.content3 {
-			h3 {
-				color: $lightLetters;
-			}
+		h1 {
+			color: $lightLetters;
+		}
 
-			ul {
-				a {
-					color: $linksDarkHover;
-				}
+		.siteContent {
+			div {
+				box-shadow: 10px 10px 20px $lightLettersHover;
 			}
 		}
 	}

@@ -32,7 +32,7 @@
 		}
 
 		.imageTop {
-			background-image: url('../../assets/images/tacho-service-page/vdo.jpg');
+			background-image: url('../../assets/images/tacho-service-page/vdo.png');
 			background-size: cover;
 			background-repeat: no-repeat;
 			width: 100%;
@@ -219,17 +219,21 @@
 
 .wrapperDark {
 	.infoConetnt {
-		.content1,
-		.content2,
-		.content3 {
+		h1,
+		h2,
+		h3 {
+			color: $lightLetters;
+		}
+
+		.linkButtonWrapper {
 			h3 {
 				color: $lightLetters;
 			}
+		}
 
-			ul {
-				a {
-					color: $linksDarkHover;
-				}
+		ul {
+			li {
+				color: $linksDarkHover;
 			}
 		}
 	}
