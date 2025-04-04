@@ -45,11 +45,6 @@ const Navigation = () => {
 			<div className={`${!isDarkModeActive ? styles.navWrapper : styles.navWrapperDark}`}>
 				<Link to="/" className={styles.navLink} onClick={handleSwitchLogo}>
 					<div className={styles.navLogo}>
-						{/* {isReasrvartionPage || location.pathname === '/wypozyczalnia' ? (
-							<img src="images/logo_wyp.png" alt="logo-wypozyczalnia" />
-						) : (
-							<img src="images/logo_maw.png" alt="logo" />
-						)} */}
 						<img src={logoSrc} alt="logo" />
 					</div>
 				</Link>
@@ -86,9 +81,6 @@ const Navigation = () => {
 					<Link id="blog" to="/blog" onClick={handleOpenCloseMenu}>
 						Blog
 					</Link>
-					<Link id="contact" to="/contact" onClick={handleOpenCloseMenu}>
-						Kontakt
-					</Link>
 					<Link id="reservation" to="/wypozyczalnia" onClick={handleOpenCloseMenu}>
 						Wypożyczalnia
 					</Link>
@@ -97,6 +89,9 @@ const Navigation = () => {
 					</Link>
 					<Link id="account" to="/tachografy" onClick={handleOpenCloseMenu}>
 						Serwis Tachografów
+					</Link>
+					<Link id="contact" to="/contact" onClick={handleOpenCloseMenu}>
+						Kontakt
 					</Link>
 					<Link id="consultation" to="/offer" onClick={handleOpenCloseMenu}>
 						BEZPŁATNA KONSULTACJA
