@@ -43,10 +43,35 @@
 					text-align: right;
 					margin-bottom: 1rem;
 				}
+			}
+		}
 
-				p {
+		.contactInfoWrapper {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			.contactPhone {
+				color: $lightLettersHover;
+				border: 1px solid $lightLettersHover;
+				padding: 1rem;
+				border-radius: $radius;
+
+				a {
+					span {
+						margin-left: 0.5rem;
+					}
 				}
 			}
+		}
+	}
+	.offerInfoWrapper {
+		margin-bottom: 2rem;
+		margin-top: 2rem;
+		h3 {
+			text-align: center;
+			color: $blueNormal;
 		}
 	}
 
@@ -89,6 +114,25 @@
 					}
 				}
 			}
+
+			.contactInfoWrapper {
+				align-items: flex-end;
+				margin-bottom: 2rem;
+
+				span {
+					font-size: $sizeXL;
+				}
+
+				.linkButtonWrapper {
+					justify-content: flex-end;
+				}
+			}
+		}
+
+		.offerInfoWrapper {
+			h3 {
+				font-size: $sizeXL;
+			}
 		}
 	}
 }
@@ -101,6 +145,30 @@
 
 		.siteContent {
 			div {
+				box-shadow: 10px 10px 20px $lightLettersHover;
+			}
+		}
+
+		.contactInfoWrapper {
+			.contactPhone {
+				color: $lightLetters;
+				box-shadow: 10px 10px 20px $lightLettersHover;
+
+				a {
+					span {
+						color: $lightLetters;
+					}
+				}
+			}
+		}
+	}
+
+	.offerInfoWrapper {
+		h3 {
+			color: $lightLetters;
+
+			a {
+				color: $lightLetters;
 				box-shadow: 10px 10px 20px $lightLettersHover;
 			}
 		}
