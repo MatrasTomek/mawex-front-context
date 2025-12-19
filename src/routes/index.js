@@ -9,6 +9,7 @@ export { default as ContactPage } from './contact-page';
 export { default as BlogPage } from './blog-page';
 export { default as Blog2023Page } from './blog2023-page';
 export { default as Blog2024Page } from './blog2024-page';
+export { default as Blog2025Page } from './blog2025-page';
 export { default as ReservationPage } from './reservation-page';
 export { default as AccountPage } from './account-page';
 export { default as CookiePage } from './cookie-page';

@@ -12,6 +12,7 @@ import {
 	BlogPage,
 	Blog2023Page,
 	Blog2024Page,
+	Blog2025Page,
 	ReservationPage,
 	CookiePage,
 	AccountPage,
@@ -47,6 +48,7 @@ const App = () => {
 					<Route path="/cookies" element={<CookiePage />} />
 					<Route path="/blog-2023" element={<Blog2023Page />} />
 					<Route path="/blog-2024" element={<Blog2024Page />} />
+					<Route path="/blog-2025" element={<Blog2025Page />} />
 					<Route path="*" element={<Navigate to="/" replace />} />
 				</Route>
 			</Routes>
@@ -57,4 +59,3 @@ const App = () => {
 };
 
 export default App;
-
