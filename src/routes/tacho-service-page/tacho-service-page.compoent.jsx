@@ -35,9 +35,8 @@ const TachoServicePage = () => {
 					</div>
 				</div>
 				<h2>
-					W Mawex oferujemy kompleksowy serwis tachografów, obejmujący zarówno urządzenia analogowe, jak i cyfrowe. Dzięki
-					wieloletniemu doświadczeniu i nowoczesnemu sprzętowi gwarantujemy najwyższą jakość usług oraz zgodność z obowiązującymi
-					przepisami.
+					W Mawex oferujemy kompleksowy serwis tachografów cyfrowych. Dzięki wieloletniemu doświadczeniu i nowoczesnemu sprzętowi
+					gwarantujemy najwyższą jakość usług oraz zgodność z obowiązującymi przepisami.
 				</h2>
 				<div className={styles.siteContent}>
 					<div className={styles.siteContent__service}>
