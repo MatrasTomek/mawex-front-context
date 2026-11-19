@@ -1,5 +1,5 @@
-import { useContext } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { lazy, Suspense, useContext } from 'react';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import {
 	Navigation,
 	Home,
@@ -17,15 +17,20 @@ import {
 	CookiePage,
 	AccountPage,
 } from './routes';
-import { Footer, RodoBanner } from './components';
+import { Footer, RodoBanner, Spinner } from './components';
 import { OFFERS_NAMES } from './content/offer-content';
 import { DarkModeContext } from './contexts/dark-mode.context';
 
 import styles from './app.module.scss';
 import TachoServicePage from './routes/tacho-service-page';
 
+// Panel admina w osobnym pliku JS — pobierany dopiero po wejściu na /mawexadmin
+const AdminPage = lazy(() => import('./routes/admin-page'));
+
 const App = () => {
 	const { isDarkModeActive } = useContext(DarkModeContext);
+	const { pathname } = useLocation();
+	const isAdmin = pathname.startsWith('/mawexadmin');
 	const offerSubRoutes = OFFERS_NAMES.map((item) => (
 		<Route key={item.id} path={`/${item.linkPath}`} element={<SubRoutes dataPath={item.linkPath} />} />
 	));
@@ -33,6 +38,14 @@ const App = () => {
 	return (
 		<div className={`${!isDarkModeActive ? '' : styles.wrapperDark}`}>
 			<Routes>
+				<Route
+					path="/mawexadmin/*"
+					element={
+						<Suspense fallback={<Spinner />}>
+							<AdminPage />
+						</Suspense>
+					}
+				/>
 				<Route path="/" element={<Navigation />}>
 					<Route index element={<Home />} />
 					<Route path="/offer" element={<Offer />} />
@@ -52,8 +65,8 @@ const App = () => {
 					<Route path="*" element={<Navigate to="/" replace />} />
 				</Route>
 			</Routes>
-			<RodoBanner />
-			<Footer />
+			{!isAdmin && <RodoBanner />}
+			{!isAdmin && <Footer />}
 		</div>
 	);
 };

@@ -1,0 +1,51 @@
+@import "../../../global-styles/common.scss";
+
+.wrapper {
+	max-width: 360px;
+	margin: 60px auto;
+	padding: 0 16px;
+
+	h1 {
+		font-size: $sizeL;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+
+	button {
+		align-self: center;
+		padding: 8px 24px;
+		cursor: pointer;
+	}
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	input {
+		padding: 8px;
+		font-size: $sizeXS;
+		border: 1px solid $greyDark;
+		border-radius: $radius;
+	}
+}
+
+.error {
+	color: rgb(190, 20, 20);
+	font-size: $sizeXXS;
+}
+
+.notice {
+	background: $greyLight;
+	border-left: 4px solid $blueNormal;
+	color: $black;
+	padding: 8px 12px;
+	margin-bottom: 16px;
+}

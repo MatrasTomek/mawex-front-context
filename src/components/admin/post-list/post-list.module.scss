@@ -1,0 +1,52 @@
+@import "../../../global-styles/common.scss";
+
+.list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 0;
+	border-bottom: 1px solid $greyLight;
+	flex-wrap: wrap;
+}
+
+.thumb {
+	width: 72px;
+	height: 54px;
+	object-fit: cover;
+	border-radius: $radius;
+	background: $greyLight;
+	flex-shrink: 0;
+}
+
+.info {
+	flex: 1 1 200px;
+	min-width: 0;
+
+	h3 {
+		font-size: $sizeXS;
+		margin: 0 0 4px;
+		overflow-wrap: anywhere;
+	}
+
+	p {
+		font-size: $sizeXXS;
+		margin: 0;
+		opacity: 0.8;
+	}
+}
+
+.actions {
+	display: flex;
+	gap: 8px;
+
+	button {
+		padding: 6px 12px;
+		cursor: pointer;
+	}
+}
