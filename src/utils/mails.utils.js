@@ -4,6 +4,8 @@ const url = process.env.REACT_APP_URL_TO_BACKEND;
 
 const request = axios.create({
 	baseURL: `${url}`,
+	// statusy błędów obsługujemy sami (gałąź else z komunikatem dla użytkownika)
+	validateStatus: () => true,
 });
 
 export const sendQuoteMail = async (formData) => {
