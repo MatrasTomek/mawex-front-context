@@ -27,7 +27,7 @@ const PostItem = React.memo(({ postItem, homePage,  dataSource }) => {
     ? ""
     : sortedContent2.map((item, index) => <p key={index}>{item}</p>);
 
-  const dataImgPath = dataSource === "cloud" ? `https://www.testy.developerweb.pl/${imgPath}` : `${imgPath}`
+  const dataImgPath = dataSource === "cloud" ? `/${imgPath}` : `${imgPath}`
 
 
   return (
