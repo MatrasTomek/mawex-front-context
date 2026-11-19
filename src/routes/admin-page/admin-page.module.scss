@@ -1,0 +1,71 @@
+@import "../../global-styles/common.scss";
+
+.wrapper,
+.wrapperDark {
+	min-height: 100vh;
+	padding: 0 16px 40px;
+	box-sizing: border-box;
+}
+
+.wrapperDark {
+	background: $darkBackg;
+	color: $lightLetters;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	padding-top: 80px;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 12px;
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 20px 0;
+	border-bottom: 2px solid $blueNormal;
+
+	h1 {
+		font-size: $sizeL;
+		margin: 0;
+	}
+
+	button {
+		padding: 6px 14px;
+		cursor: pointer;
+	}
+}
+
+.userBox {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+
+.main {
+	max-width: 900px;
+	margin: 20px auto 0;
+
+	> button {
+		margin-bottom: 16px;
+		padding: 8px 18px;
+		cursor: pointer;
+	}
+}
+
+.error {
+	color: rgb(190, 20, 20);
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+
+	button {
+		padding: 6px 14px;
+		cursor: pointer;
+	}
+}
