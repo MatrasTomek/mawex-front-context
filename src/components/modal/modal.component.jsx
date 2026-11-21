@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 import styles from "./modal.module.scss";
 
-const Modal = ({ children, isModalOpen, handleOnCloseModal }) => {
+const Modal = ({ children, isModalOpen, handleOnCloseModal, bordered = false }) => {
   const modalRef = useRef(null);
   const previousActiveElement = useRef(null);
 
@@ -42,7 +42,7 @@ const Modal = ({ children, isModalOpen, handleOnCloseModal }) => {
 
   return createPortal(
     <div className={ styles.modal } ref={ modalRef }>
-      <div className={ styles.wrapper }>{ children }</div>
+      <div className={ bordered ? `${styles.wrapper} ${styles.bordered}` : styles.wrapper }>{ children }</div>
     </div>,
     document.querySelector("#modal")
   );

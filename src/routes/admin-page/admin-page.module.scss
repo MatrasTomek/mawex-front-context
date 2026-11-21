@@ -10,6 +10,9 @@
 .wrapperDark {
 	background: $darkBackg;
 	color: $lightLetters;
+	// jaśniejsza czerwień dla błędów na ciemnym tle (kontrast ~7:1 zamiast ~2.9:1);
+	// modale są w portalu poza wrapperem i zostają przy ciemnej czerwieni na białym
+	--admin-error: rgb(255, 120, 120);
 }
 
 .center {
@@ -58,7 +61,7 @@
 }
 
 .error {
-	color: rgb(190, 20, 20);
+	color: var(--admin-error, rgb(190, 20, 20));
 	display: flex;
 	align-items: center;
 	gap: 12px;

@@ -7,6 +7,7 @@ import * as api from "../../utils/admin.utils";
 jest.mock("../../utils/admin.utils", () => ({
 	loginRequest: jest.fn(),
 	getMe: jest.fn(),
+	logoutRequest: jest.fn(),
 	getPosts: jest.fn(),
 	deletePost: jest.fn(),
 	uploadPhoto: jest.fn(),
@@ -126,6 +127,7 @@ test("401 on delete returns to login with notice", async () => {
 	expect(await screen.findByText("Sesja wygasła — zaloguj się ponownie")).toBeInTheDocument();
 	expect(screen.getByLabelText("Login")).toBeInTheDocument();
 	expect(sessionStorage.getItem(KEY)).toBeNull();
+	expect(api.logoutRequest).not.toHaveBeenCalled();
 });
 
 test("logout returns to login", async () => {
@@ -135,6 +137,17 @@ test("logout returns to login", async () => {
 	userEvent.click(screen.getByRole("button", { name: "Wyloguj" }));
 	expect(screen.getByLabelText("Login")).toBeInTheDocument();
 	expect(sessionStorage.getItem(KEY)).toBeNull();
+	expect(api.logoutRequest).toHaveBeenCalledTimes(1);
+	expect(api.logoutRequest).toHaveBeenCalledWith("tok");
+});
+
+test("logout does not wait for server", async () => {
+	loggedIn();
+	api.logoutRequest.mockReturnValue(new Promise(() => {}));
+	renderPage();
+	await screen.findByText("Panel Mawex — blog");
+	userEvent.click(screen.getByRole("button", { name: "Wyloguj" }));
+	expect(screen.getByLabelText("Login")).toBeInTheDocument();
 });
 
 test("added post appears at top of list", async () => {
@@ -180,4 +193,53 @@ test("relogin from expired form returns to login", async () => {
 	userEvent.click(await screen.findByRole("button", { name: "Zaloguj ponownie" }));
 	expect(screen.getByLabelText("Login")).toBeInTheDocument();
 	expect(screen.getByText("Sesja wygasła — zaloguj się ponownie")).toBeInTheDocument();
+});
+
+test("failed login replaces the session-expired notice", async () => {
+	sessionStorage.setItem(KEY, JSON.stringify({ token: "tok", user }));
+	api.getMe.mockResolvedValue(fail(401, "Brak autoryzacji"));
+	api.loginRequest.mockResolvedValue(fail(404, "Login lub hasło się nie zgadza"));
+	renderPage();
+	expect(await screen.findByText("Sesja wygasła — zaloguj się ponownie")).toBeInTheDocument();
+	userEvent.type(screen.getByLabelText("Login"), "a@b.pl");
+	userEvent.type(screen.getByLabelText("Hasło"), "zle");
+	userEvent.click(screen.getByRole("button", { name: "Zaloguj" }));
+	expect(await screen.findByText("Login lub hasło się nie zgadza")).toBeInTheDocument();
+	expect(screen.queryByText("Sesja wygasła — zaloguj się ponownie")).not.toBeInTheDocument();
+});
+
+test("delete of already removed post (404) drops it from list", async () => {
+	loggedIn();
+	api.deletePost.mockResolvedValue(fail(404, "Nie ma postu do usunięcia"));
+	renderPage();
+	const items = await screen.findAllByRole("listitem");
+	userEvent.click(within(items[0]).getByRole("button", { name: "Usuń" }));
+	const dialog = screen.getByText("Usunąć post „B”?").closest("[data-role=confirm]");
+	userEvent.click(within(dialog).getByRole("button", { name: "Usuń" }));
+	await waitFor(() => expect(screen.queryByText("Usunąć post „B”?")).not.toBeInTheDocument());
+	expect(screen.getAllByRole("listitem")).toHaveLength(1);
+	expect(screen.queryByText("B")).not.toBeInTheDocument();
+});
+
+test("modal takes focus, closes on Escape and gives focus back", async () => {
+	loggedIn();
+	renderPage();
+	await screen.findAllByRole("listitem");
+	const opener = screen.getByRole("button", { name: "+ Dodaj post" });
+	opener.focus();
+	userEvent.click(opener);
+	const dialog = screen.getByRole("dialog");
+	expect(dialog).toHaveAttribute("aria-modal", "true");
+	expect(dialog.contains(document.activeElement)).toBe(true);
+	userEvent.keyboard("{Escape}");
+	expect(screen.queryByLabelText("Tytuł")).not.toBeInTheDocument();
+	expect(document.activeElement).toBe(opener);
+});
+
+test("admin modals get the bordered style", async () => {
+	loggedIn();
+	renderPage();
+	const items = await screen.findAllByRole("listitem");
+	userEvent.click(within(items[0]).getByRole("button", { name: "Usuń" }));
+	expect(screen.getByRole("dialog").parentElement.className).toMatch(/bordered/);
 });

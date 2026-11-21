@@ -38,7 +38,7 @@
 }
 
 .error {
-	color: rgb(190, 20, 20);
+	color: var(--admin-error, rgb(190, 20, 20));
 	font-size: $sizeXXS;
 }
 

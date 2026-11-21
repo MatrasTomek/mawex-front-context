@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Form, Field } from "react-final-form";
-import Modal from "../../modal";
+import AdminModal from "../admin-modal";
 import { uploadPhoto, addPost, updatePost } from "../../../utils/admin.utils";
 import styles from "./post-form.module.scss";
 
@@ -36,26 +36,35 @@ const PostForm = ({ post, token, defaultUserName, onSaved, onCancel, onUnauthori
 	const [saveError, setSaveError] = useState(null);
 	const [expired, setExpired] = useState(false);
 	const busy = useRef(false);
+	// zmiana klucza montuje pole pliku od nowa — odrzucony plik nie zostaje w nim „wybrany”
+	const [fileInputKey, setFileInputKey] = useState(0);
 
 	const initialValues = useMemo(() => {
 		if (isNew) return { title: "", content1: "", content2: "", link: "", userName: defaultUserName || "", date: todayIso() };
 		return Object.fromEntries(FIELDS.map((key) => [key, post[key] ?? ""]));
 	}, [isNew, post, defaultUserName]);
 
-	const previewUrl = useMemo(() => (file ? URL.createObjectURL(file) : null), [file]);
-	useEffect(() => () => previewUrl && URL.revokeObjectURL(previewUrl), [previewUrl]);
+	// URL tworzony w efekcie (nie w useMemo): każdy utworzony jest zwalniany, także w StrictMode
+	const [previewUrl, setPreviewUrl] = useState(null);
+	useEffect(() => {
+		if (!file) {
+			setPreviewUrl(null);
+			return undefined;
+		}
+		const url = URL.createObjectURL(file);
+		setPreviewUrl(url);
+		return () => URL.revokeObjectURL(url);
+	}, [file]);
 
 	const handleFile = (event) => {
 		const chosen = event.target.files && event.target.files[0];
 		setUploadedName(null);
 		if (!chosen) return setFile(null);
-		if (!ALLOWED.includes(chosen.type)) {
+		const rejected = !ALLOWED.includes(chosen.type) ? "Dozwolone: JPG, PNG, WEBP, GIF" : chosen.size > MAX_BYTES ? "Plik jest za duży (max 10 MB)" : null;
+		if (rejected) {
 			setFile(null);
-			return setFileError("Dozwolone: JPG, PNG, WEBP, GIF");
-		}
-		if (chosen.size > MAX_BYTES) {
-			setFile(null);
-			return setFileError("Plik jest za duży (max 10 MB)");
+			setFileInputKey((k) => k + 1);
+			return setFileError(rejected);
 		}
 		setFileError(null);
 		setFile(chosen);
@@ -93,7 +102,7 @@ const PostForm = ({ post, token, defaultUserName, onSaved, onCancel, onUnauthori
 	const shownImage = previewUrl || (!isNew && post.imgPath ? `/${post.imgPath}` : null);
 
 	return (
-		<Modal isModalOpen handleOnCloseModal={onCancel}>
+		<AdminModal onClose={expired ? onUnauthorized : onCancel}>
 			<Form
 				onSubmit={onSubmit}
 				initialValues={initialValues}
@@ -111,7 +120,7 @@ const PostForm = ({ post, token, defaultUserName, onSaved, onCancel, onUnauthori
 						<div className={styles.field}>
 							<label htmlFor="post-photo">Zdjęcie</label>
 							{shownImage && <img src={shownImage} alt="" className={styles.preview} />}
-							<input id="post-photo" type="file" accept={ALLOWED.join(",")} onChange={handleFile} />
+							<input key={fileInputKey} id="post-photo" type="file" accept={ALLOWED.join(",")} onChange={handleFile} />
 							{fileError && <span className={styles.error}>{fileError}</span>}
 						</div>
 
@@ -146,7 +155,7 @@ const PostForm = ({ post, token, defaultUserName, onSaved, onCancel, onUnauthori
 					</form>
 				)}
 			/>
-		</Modal>
+		</AdminModal>
 	);
 };
 

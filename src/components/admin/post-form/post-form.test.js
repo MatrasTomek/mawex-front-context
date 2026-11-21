@@ -1,3 +1,4 @@
+import { StrictMode } from "react";
 import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import PostForm from "./post-form.component";
@@ -186,4 +187,31 @@ test("cancel after 401 also returns to login", async () => {
 	userEvent.click(screen.getByRole("button", { name: "Anuluj" }));
 	expect(props.onUnauthorized).toHaveBeenCalledTimes(1);
 	expect(props.onCancel).not.toHaveBeenCalled();
+});
+
+test("rejected file is cleared from the input", () => {
+	renderForm();
+	userEvent.upload(screen.getByLabelText("Zdjęcie"), new File(["x"], "a.txt", { type: "text/plain" }), undefined, { applyAccept: false });
+	expect(screen.getByText("Dozwolone: JPG, PNG, WEBP, GIF")).toBeInTheDocument();
+	expect(screen.getByLabelText("Zdjęcie").files).toHaveLength(0);
+});
+
+test("preview URLs are valid and all released under StrictMode", () => {
+	let n = 0;
+	global.URL.createObjectURL = jest.fn(() => `blob:${++n}`);
+	props = { post: null, token: "tok", defaultUserName: "Ania", onSaved: jest.fn(), onCancel: jest.fn(), onUnauthorized: jest.fn() };
+	const { unmount } = render(
+		<StrictMode>
+			<PostForm {...props} />
+		</StrictMode>
+	);
+	userEvent.upload(screen.getByLabelText("Zdjęcie"), jpg());
+	const src = document.querySelector("#modal img").getAttribute("src");
+	expect(src).toMatch(/^blob:/);
+	expect(global.URL.revokeObjectURL).not.toHaveBeenCalledWith(src);
+	unmount();
+	// każdy utworzony URL zostaje zwolniony — także te z podwójnego renderu StrictMode
+	const created = global.URL.createObjectURL.mock.results.map((r) => r.value);
+	const revoked = global.URL.revokeObjectURL.mock.calls.map((c) => c[0]);
+	expect(created.filter((url) => !revoked.includes(url))).toEqual([]);
 });
