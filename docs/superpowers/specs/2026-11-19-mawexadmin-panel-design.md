@@ -116,6 +116,10 @@ Projekt 2 z 2 po migracji backendu; kontekst:
 
 - `AdminSessionContext` (provider tylko wewnątrz panelu): `{ user, token,
   login(login, password), logout(message?) }`.
+- *Dopisane 2026-11-21:* przycisk „Wyloguj” woła `signOut()` — wysyła w tle
+  `DELETE users/me` (backend usuwa token z bazy) i od razu czyści sesję
+  lokalną, bez czekania na odpowiedź. Przy wygaśnięciu sesji (401) zostaje samo
+  `logout(message)`, bez żądania.
 - Token i `user` (`name`, `user`) w `sessionStorage` (klucz np.
   `mawexAdminSession`) — przetrwa odświeżenie, znika po zamknięciu karty;
   jak stary panel.

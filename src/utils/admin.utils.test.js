@@ -1,4 +1,4 @@
-import { loginRequest, getMe, getPosts, uploadPhoto, addPost, updatePost, deletePost } from "./admin.utils";
+import { loginRequest, getMe, logoutRequest, getPosts, uploadPhoto, addPost, updatePost, deletePost } from "./admin.utils";
 
 jest.mock("axios", () => {
 	const instance = { request: jest.fn() };
@@ -30,6 +30,15 @@ test("getMe sends bearer token", async () => {
 	expect(r).toMatchObject({ ok: true, data: { name: "Ania" } });
 	const cfg = http.request.mock.calls[0][0];
 	expect(cfg).toMatchObject({ method: "get", url: "users/me" });
+	expect(cfg.headers.Authorization).toBe("Bearer abc");
+});
+
+test("logoutRequest deletes users/me with bearer token", async () => {
+	respond(200, "");
+	const r = await logoutRequest("abc");
+	expect(r).toMatchObject({ ok: true, status: 200 });
+	const cfg = http.request.mock.calls[0][0];
+	expect(cfg).toMatchObject({ method: "delete", url: "users/me" });
 	expect(cfg.headers.Authorization).toBe("Bearer abc");
 });
 

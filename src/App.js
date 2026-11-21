@@ -24,13 +24,16 @@ import { DarkModeContext } from './contexts/dark-mode.context';
 import styles from './app.module.scss';
 import TachoServicePage from './routes/tacho-service-page';
 
+import LoadErrorBoundary from './components/admin/load-error-boundary';
+
 // Panel admina w osobnym pliku JS — pobierany dopiero po wejściu na /mawexadmin
 const AdminPage = lazy(() => import('./routes/admin-page'));
 
 const App = () => {
 	const { isDarkModeActive } = useContext(DarkModeContext);
 	const { pathname } = useLocation();
-	const isAdmin = pathname.startsWith('/mawexadmin');
+	// router dopasowuje ścieżki bez względu na wielkość liter — tu tak samo
+	const isAdmin = pathname.toLowerCase().startsWith('/mawexadmin');
 	const offerSubRoutes = OFFERS_NAMES.map((item) => (
 		<Route key={item.id} path={`/${item.linkPath}`} element={<SubRoutes dataPath={item.linkPath} />} />
 	));
@@ -41,9 +44,11 @@ const App = () => {
 				<Route
 					path="/mawexadmin/*"
 					element={
-						<Suspense fallback={<Spinner />}>
-							<AdminPage />
-						</Suspense>
+						<LoadErrorBoundary>
+							<Suspense fallback={<Spinner />}>
+								<AdminPage />
+							</Suspense>
+						</LoadErrorBoundary>
 					}
 				/>
 				<Route path="/" element={<Navigation />}>

@@ -1,8 +1,8 @@
-import Modal from "../../modal";
+import AdminModal from "../admin-modal";
 import Button from "../../button";
 
 const ConfirmDelete = ({ post, busy, error, onConfirm, onCancel }) => (
-	<Modal isModalOpen handleOnCloseModal={onCancel}>
+	<AdminModal onClose={onCancel}>
 		<div data-role="confirm" style={{ padding: "16px", textAlign: "center" }}>
 			<p>Usunąć post „{post.title}”?</p>
 			{error && <p style={{ color: "rgb(190, 20, 20)" }}>{error}</p>}
@@ -11,7 +11,7 @@ const ConfirmDelete = ({ post, busy, error, onConfirm, onCancel }) => (
 				<Button type="button" name={busy ? "Usuwanie…" : "Usuń"} onClick={busy ? undefined : onConfirm} />
 			</div>
 		</div>
-	</Modal>
+	</AdminModal>
 );
 
 export default ConfirmDelete;

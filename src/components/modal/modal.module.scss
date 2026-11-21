@@ -24,6 +24,11 @@
     width: 85%;
     height: 80%;
   }
+
+  // wariant z ramką (panel /mawexadmin)
+  .wrapper.bordered {
+    border: 2px solid $blueNormal;
+  }
   @media screen and (orientation: landscape) {
     .wrapper {
       width: 55%;

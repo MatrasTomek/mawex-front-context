@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { getMe, loginRequest } from "../utils/admin.utils";
+import { getMe, loginRequest, logoutRequest } from "../utils/admin.utils";
 
 // Sesja panelu /mawexadmin. Token z sessionStorage NIE wystarcza do pokazania panelu:
 // przy starcie jest sprawdzany w backendzie (GET users/me), a do czasu odpowiedzi status = "checking".
@@ -66,6 +66,8 @@ export const AdminSessionProvider = ({ children }) => {
 	}, [pendingToken]);
 
 	const login = useCallback(async (login, password) => {
+		// nowa próba logowania — stary komunikat (np. „Sesja wygasła”) już nie dotyczy
+		setState((s) => (s.notice ? { ...s, notice: null } : s));
 		const res = await loginRequest(login, password);
 		if (!res.ok) return { ok: false, message: res.message };
 		const user = userFields(res.data);
@@ -79,7 +81,15 @@ export const AdminSessionProvider = ({ children }) => {
 		setState({ status: "anonymous", token: null, user: null, notice });
 	}, []);
 
-	const value = useMemo(() => ({ ...state, login, logout }), [state, login, logout]);
+	// Wylogowanie przyciskiem: token unieważniany w backendzie w tle — bez czekania na odpowiedź,
+	// bo sesja lokalna i tak znika. (Przy wygaśnięciu sesji wołamy samo logout — token już nie działa.)
+	const { token } = state;
+	const signOut = useCallback(() => {
+		if (token) logoutRequest(token);
+		logout();
+	}, [token, logout]);
+
+	const value = useMemo(() => ({ ...state, login, logout, signOut }), [state, login, logout, signOut]);
 	return <AdminSessionContext.Provider value={value}>{children}</AdminSessionContext.Provider>;
 };
 

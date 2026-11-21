@@ -43,6 +43,9 @@ export const loginRequest = (login, password) =>
 
 export const getMe = (token) => call({ method: "get", url: "users/me", headers: auth(token) }, 200, (body) => asObject(body.user));
 
+// Wylogowanie: unieważnia token w backendzie (DELETE users/me → 200, puste ciało).
+export const logoutRequest = (token) => call({ method: "delete", url: "users/me", headers: auth(token) }, 200);
+
 export const getPosts = () => call({ method: "get", url: "posts" }, 200, (body) => (Array.isArray(body.data) ? body.data : undefined));
 
 export const uploadPhoto = (token, file) => {

@@ -56,3 +56,9 @@ test("home still renders footer", async () => {
 	expect((await screen.findAllByText(FOOTER_TEXT)).length).toBeGreaterThan(0);
 	expect(screen.queryByRole("button", { name: "Zaloguj" })).not.toBeInTheDocument();
 });
+
+test("admin route ignores letter case for footer", async () => {
+	await renderAt("/MawexAdmin");
+	expect(await screen.findByRole("button", { name: "Zaloguj" })).toBeInTheDocument();
+	expect(screen.queryByText(FOOTER_TEXT)).not.toBeInTheDocument();
+});
